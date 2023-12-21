@@ -7,4 +7,3 @@ Feature:ambalaj_urunleri
     And    GC Kullanici Ambalaj Urunlerimiz secenegine tiklar
     When   GC Kullanici Ambalaj Urunlerimiz sayfasinda oldugunu dogrular
     Then   GC Kullanici sayfayi kapatir
-
