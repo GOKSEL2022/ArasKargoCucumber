@@ -17,4 +17,22 @@ public class US02 {
 
     @FindBy(xpath = "(//a[@href='/hizmetlerimiz/ambalaj-urunlerimiz'])[1]")
     public WebElement ambalajUrunlerimizHizmetlerimizLinkHome;
+
+    @FindBy(xpath = "(//div[@class='packaging-products-tabbed__button-title'])[1]")
+    public WebElement kutuKoliButonAmbalajUrunleri;
+
+    @FindBy(xpath = "(//div[@class='packaging-products-tabbed__button-title'])[2]")
+    public WebElement dosyaEvrakButonAmbalajUrunleri;
+
+    @FindBy(xpath = "//div[@class='row px-xl-2']")
+    public WebElement kutuKoliSecenekleriAmbalajUrunleri;
+
+    @FindBy(xpath = "//div[@class='row px-xl-2']")
+    public WebElement dosyaEvrakSecenekleriAmbalajUrunleri;
+
+    @FindBy(xpath = "//*[@class='aras-pdf-button-href']")
+    public WebElement ambalajFiyatlariButonAmbalajUrunleri;
+
+    @FindBy(xpath = "//div[@id='sizer']")
+    public WebElement arasKargoHizmetlerFiyatListesiPDF;
 }
