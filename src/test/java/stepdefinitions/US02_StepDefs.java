@@ -23,7 +23,6 @@ public class US02_StepDefs {
     public void kullanici_hizmetlerinmiz_basligina_gelir() throws InterruptedException {
         ReusableMethods.clickWithTimeOut(us02.popupCloseHome,3);
         actions.moveToElement(us02.hizmetlerimizLinkHome).perform();
-        Thread.sleep(3000);
     }
     @When("GC Kullanici Ambalaj Urunlerimiz secenegine tiklar")
     public void kullanici_ambalaj_urunlerimiz_secenegine_tiklar() {
