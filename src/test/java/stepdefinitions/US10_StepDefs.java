@@ -17,16 +17,15 @@ public class US10_StepDefs {
     public void gcKullaniciKariyerBasliginaGelir() throws InterruptedException {
         ReusableMethods.clickWithTimeOut(us02.popupCloseHome,3);
         actions.moveToElement(us10.kariyerLinkHome).perform();
-        Thread.sleep(3000);
     }
     @And("GC Kullanici Gelecegin Bizde Onem Tasir secenegine tiklar")
     public void gcKullaniciGeleceginBizdeOnemTasirSecenegineTiklar() {
         ReusableMethods.clickWithTimeOut(us10.geleceginBizdeOnemTasirSecenegiKariyerLinkHome,3);
     }
-
     @And("GC Kullanici Gelecegin Bizde Onem Tasir sayfasinda oldugunu dogrular")
     public void gcKullaniciGeleceginBizdeOnemTasirSayfasindaOldugunuDogrular() {
-        assert us10.geleceginBizdeOnemTasirTitleText.isDisplayed();
+        assert Driver.getDriver().getCurrentUrl().contains("gelecegin-bizde-onem-tasir");
+        // assert us10.geleceginBizdeOnemTasirTitleText.isDisplayed();
     }
     @Given("GC Kullanici Aras Kargo Is Basvurulari basligini goruntuler")
     public void gcKullaniciArasKargoIsBasvurulariBasliginiGoruntuler() {
@@ -49,7 +48,6 @@ public class US10_StepDefs {
         ReusableMethods.switchToWindow(1);
         Driver.getDriver().getCurrentUrl().contains("linkedin.com/company/aras-kargo/jobs/");
     }
-
     @And("GC Kullanici kariyer.net butonuna tiklar")
     public void gcKullaniciKariyerNetButonunaTiklar() {
         ReusableMethods.clickWithTimeOut(us10.kariyernetLinkArasKargoIsBasvurulari,1);
@@ -59,7 +57,6 @@ public class US10_StepDefs {
         ReusableMethods.switchToWindow(1);
         Driver.getDriver().getCurrentUrl().contains("kariyer.net/firma-profil/aras-kargo");
     }
-
     @And("GC Kullanici Secretcv butonuna tiklar")
     public void gcKullaniciSecretcvButonunaTiklar() {
         ReusableMethods.clickWithTimeOut(us10.secretcvLinkArasKargoIsBasvurulari,1);

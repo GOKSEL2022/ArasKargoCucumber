@@ -1,8 +1,9 @@
+@US02
 Feature:US12_SSS(sik_sorulan_sorular)_sayfa_test
   Background:
-    Given GC Kullanici https://www.araskargo.com.tr/  url ye gelir
+    Given GC Kullanici "https://www.araskargo.com.tr"  url ye gelir
      When GC Kullanici anasayfanin acildigini dogrular
-     And  GC Kullanici Müsteri İliskileri basligina gelir
+     And  GC Kullanici Musteri Iliskileri basligina gelir
      And  GC Kullanici SSS secenegine tiklar
      When GC Kullanici Sik Sorulan Sorular sayfasinda oldugunu dogrular
 
@@ -35,7 +36,7 @@ Feature:US12_SSS(sik_sorulan_sorular)_sayfa_test
     And   GC Kullanici AppStore  sayfasina yonlendirildigini dogrular
     Then  GC Kullanici sayfayi kapatir
 
-  Scenario: US12_TC05
+  Scenario: US12_TC06
     Given GC Kullanici sayfadaki ilk soruya tiklar
     When  GC Kullanici cevapta belirtilen mobil uygulamalardan AppGallery e tiklar
     And   GC Kullanici AppGallery sayfasina yonlendirildigini dogrular
