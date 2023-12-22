@@ -1,4 +1,4 @@
-@hakkimizda,@smoke
+@hakkimizda @smoke
 Feature:Hakkimizda butonuna tiklama
 
   Scenario:Hakkimizda butonunu tiklanmasi
