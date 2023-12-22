@@ -34,8 +34,6 @@ public class US01_StepDefs {
     @And("MS Hakkimizda butonuna tiklar")
     public void mshakkimizdaButonunaTiklar() {
         ReusableMethods.clickByJS(us01.hakkimizdaButon);
-
-
     }
     @When("MS Hizmetlerimiz butonuna tiklar")
     public void hizmetlerimiz_butonuna_tiklar() {

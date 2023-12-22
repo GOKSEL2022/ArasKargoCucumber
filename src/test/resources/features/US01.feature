@@ -1,4 +1,8 @@
 
+@hakkimizda @smoke
+Feature:Hakkimizda butonuna tiklama
+
+
 Feature:Ana_Sayfadaki_Butonlarin_Tiklanmasi
   @hakkimizda
   Scenario:Hakkimizda butonunu tiklanmasi
