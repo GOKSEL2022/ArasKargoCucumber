@@ -23,4 +23,8 @@ public class US03 {
     @FindBy(xpath = "//*[text()=' Hemen Başvur ']")
     public WebElement hemenBasvurGL;
 
+    @FindBy(xpath = "//*[@class='mat-form-field-flex ng-tns-c2842056177-2']")
+    public WebElement ilSecimiGL;
+
+
 }

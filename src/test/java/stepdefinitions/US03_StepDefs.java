@@ -6,11 +6,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pages.US03;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Random;
 
 
 public class US03_StepDefs {
@@ -49,6 +51,8 @@ public class US03_StepDefs {
 
     @And("GL Başvuru İli seçilir")
     public void glBaşvuruİliSeçilir() {
+        ReusableMethods.clickByJS(pages.ilSecimiGL);
+       // ReusableMethods.selectRandomTextFromDropdown();
 
     }
 
