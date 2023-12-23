@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class US03 {
 
     public US03(){
@@ -22,9 +24,24 @@ public class US03 {
 
     @FindBy(xpath = "//*[text()=' Hemen Başvur ']")
     public WebElement hemenBasvurGL;
+    @FindBy(xpath = "//*[@id='mat-autocomplete-1']")
+    public List<WebElement> ilSecimi;
 
-    @FindBy(xpath = "//*[@class='mat-form-field-flex ng-tns-c2842056177-2']")
-    public WebElement ilSecimiGL;
+    @FindBy(xpath = "//*[@id='mat-input-1']")
+    public WebElement ilSecimi1;
+
+
+    @FindBy(xpath = "//*[@*='add-location-btn ng-star-inserted']")
+    public WebElement locasyonEkle;
+
+    @FindBy(xpath = "//*[@*='mat-form-field-flex ng-tns-c2842056177-15']")
+    public WebElement isimGir;
+
+    @FindBy(xpath = "//*[@*='mat-form-field-flex ng-tns-c2842056177-20']")
+    public WebElement egitimDurumu;
+
+
+
 
 
 }
