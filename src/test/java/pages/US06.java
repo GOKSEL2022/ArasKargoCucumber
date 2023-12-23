@@ -7,8 +7,8 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class US06_pages {
-    public US06_pages() {
+public class US06 {
+    public US06() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -32,19 +32,20 @@ public class US06_pages {
     @FindBy(xpath = "//*[@class='selectable-box_title' and contains(.,'Kutu')]")
     public WebElement kutuKoliButonu;
 
-    @FindBy(xpath = "//input[@type='text' and @id='mat-input-11' ]")
+//    @FindBy(xpath = "//input[@type='text' and @id='mat-input-11' ]")
+    @FindBy(xpath = "(//input[@type='text'])[5]")
     public WebElement nereyeTextBox;
 
-    @FindBy(xpath = "//input[@type='number' and @id='mat-input-12' ]")
+    @FindBy(xpath = "(//input[@type='number'])[1]")
     public WebElement agirlikTextBox;
 
-    @FindBy(xpath = "//input[@type='number' and @id='mat-input-13' ]")
+    @FindBy(xpath = "(//input[@type='number'])[2]")
     public WebElement boyTextBox;
 
-    @FindBy(xpath = "//input[@type='number' and @id='mat-input-14' ]")
+    @FindBy(xpath = "(//input[@type='number'])[3]")
     public WebElement yukseklikTextBox;
 
-    @FindBy(xpath = "//input[@type='number' and @id='mat-input-15' ]")
+    @FindBy(xpath = "(//input[@type='number'])[4]")
     public WebElement enTextBox;
 
     @FindBy(xpath = "//*[contains(text(),'Kg Hesapla')]")
@@ -53,10 +54,16 @@ public class US06_pages {
     @FindBy(xpath = "//button[.='Yeni Hesaplama Yap']")
     public WebElement yeniHesaplamaYapButton;
 
-    @FindBy(xpath = "//button[.='Yeni Hesaplama Yap']")
+    @FindBy(xpath = "//*[@class='detail-pages-hero__title' and contains(.,'Teslim süreleri ve ücret hesaplama')]")
     public WebElement ucretHesaplamaSayfasiText;
 
+    @FindBy(xpath = "//input[@type='number' and @aria-invalid='true']")
+    public WebElement invalidInput;
 
 
+    @FindBy(xpath = "//*[@class='item-total-price']")
+    public List<WebElement> itemTotalPriceList;
+    @FindBy(xpath = "//small[@class='error-block ng-star-inserted']")
+    public WebElement agirlikInvalidMsg;
 
 }
