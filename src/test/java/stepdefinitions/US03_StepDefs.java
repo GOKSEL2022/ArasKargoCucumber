@@ -12,6 +12,8 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+
+import java.util.List;
 import java.util.Random;
 
 
@@ -34,7 +36,7 @@ public class US03_StepDefs {
 
     @Then("GL İş Ortağımız olun sekmesine tıklanır")
     public void glİşOrtağımızOlunSekmesineTıklanır() {
-        actions.moveToElement(pages.isOrtagiGL).perform();
+        ReusableMethods.hover(pages.isOrtagiGL);
 
     }
 
@@ -51,21 +53,40 @@ public class US03_StepDefs {
 
     @And("GL Başvuru İli seçilir")
     public void glBaşvuruİliSeçilir() {
-        ReusableMethods.clickByJS(pages.ilSecimiGL);
-       // ReusableMethods.selectRandomTextFromDropdown();
+
+        ReusableMethods.clickByJS(pages.ilSecimi1);
+        ReusableMethods.waitFor(2);
+        List <WebElement> sehirlerListesi = pages.ilSecimi;
+        Random rnd = new Random();
+        int rndnumber= rnd.nextInt(sehirlerListesi.size());
+        sehirlerListesi.get(rndnumber).click();
+
+
+      //  ReusableMethods.clickByJS(pages.ilSecimiGL);   ---------
+       // ReusableMethods.selectRandomTextFromDropdown();  -------
+
 
     }
 
     @And("GL Lokasyon ekle butonuna tıklanır")
     public void glLokasyonEkleButonunaTıklanır() {
+       pages.locasyonEkle.click();
     }
 
     @And("GL İsim, Soyisim, Yaş, Telefon numarası, E-posta bilgileri girilir")
     public void glİsimSoyisimYaşTelefonNumarasıEPostaBilgileriGirilir() {
+        pages.isimGir.sendKeys(ConfigReader.getProperty("isim"), Keys.TAB ,
+                ConfigReader.getProperty("Soyisim"), Keys.TAB , ConfigReader.getProperty("Yaş"), Keys.TAB,
+                ConfigReader.getProperty("Telefon"), Keys.TAB , ConfigReader.getProperty("Eposta"), Keys.TAB);
+
     }
 
     @And("GL Egitim durumu seçilir")
     public void glEgitimDurumuSeçilir() {
+        Select select = new Select(pages.egitimDurumu);
+        ReusableMethods.selectRandomTextFromDropdown(select);
+
+
     }
 
     @And("GL sayfa kapatılır")
