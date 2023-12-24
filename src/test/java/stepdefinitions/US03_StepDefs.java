@@ -13,6 +13,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+
 import java.util.List;
 import java.util.Random;
 
@@ -53,12 +54,17 @@ public class US03_StepDefs {
 
     @And("GL Başvuru İli seçilir")
     public void glBaşvuruİliSeçilir() {
+
         ReusableMethods.clickByJS(pages.ilSecimi1);
         ReusableMethods.waitFor(2);
         List <WebElement> sehirlerListesi = pages.ilSecimi;
         Random rnd = new Random();
         int rndnumber= rnd.nextInt(sehirlerListesi.size());
         sehirlerListesi.get(rndnumber).click();
+
+
+      //  ReusableMethods.clickByJS(pages.ilSecimiGL);   ---------
+       // ReusableMethods.selectRandomTextFromDropdown();  -------
 
 
     }
