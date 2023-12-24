@@ -24,10 +24,10 @@ public class US03_StepDefs {
     Actions actions = new Actions(Driver.getDriver());
     US03 pages = new US03();
 
-    @Given("GL Web sitesine {string} gidilir")
-    public void glWebSitesineGidilir(String url) {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-    }
+   @Given("GL Web sitesine {string} gidilir")
+   public void glWebSitesineGidilir(String url) {
+       Driver.getDriver().get(ConfigReader.getProperty("url"));
+   }
 
     @When("GL Ekrandaki uyarı yazısı kapatılır")
     public void glEkrandakiUyarıYazısıKapatılır() {
@@ -63,16 +63,12 @@ public class US03_StepDefs {
         sehirlerListesi.get(rndnumber).click();
 
 
-      //  ReusableMethods.clickByJS(pages.ilSecimiGL);   ---------
-       // ReusableMethods.selectRandomTextFromDropdown();  -------
-
 
     }
 
     @And("GL Lokasyon ekle butonuna tıklanır")
     public void glLokasyonEkleButonunaTıklanır() {
        pages.locasyonEkle.click();
-     //  actions.moveToElement(pages.isimGir).perform();
 
     }
 
@@ -80,19 +76,14 @@ public class US03_StepDefs {
     public void glİsimSoyisimYaşTelefonNumarasıEPostaBilgileriGirilir() {
         ReusableMethods.clickByJS(pages.isimGir);
         pages.isimGir.sendKeys(ConfigReader.getProperty("isim"), Keys.TAB ,
-                ConfigReader.getProperty("Soyisim"), Keys.TAB , ConfigReader.getProperty("Yaş"), Keys.TAB,
-                ConfigReader.getProperty("Telefon"), Keys.TAB , ConfigReader.getProperty("Eposta"), Keys.TAB);
+                ConfigReader.getProperty("Soyisim"), Keys.TAB , ConfigReader.getProperty("Yas"), Keys.TAB,
+                ConfigReader.getProperty("Telefon"), Keys.TAB , ConfigReader.getProperty("Eposta"), Keys.TAB, Keys.ENTER,Keys.ENTER);
 
     }
 
     @And("GL Egitim durumu seçilir")
     public void glEgitimDurumuSeçilir() {
-        ReusableMethods.clickByJS(pages.egitimDurumu);
-        ReusableMethods.waitFor(2);
-        List <WebElement> sehirlerListesi = pages.egitimDurumu1;
-        Random rnd = new Random();
-        int rndnumber= rnd.nextInt(sehirlerListesi.size());
-        sehirlerListesi.get(rndnumber).click();
+
 
     }
 
@@ -127,5 +118,36 @@ public class US03_StepDefs {
     public void glLütfenGerekliHatalıAlanlarıKontrolEdinizUyarısıGörülür() {
 
         Assert.assertTrue(pages.hatalıMesajYazisi.isDisplayed());
+    }
+
+    @Given("GL İsim, Yaş {int} in altında bir sayı yazılır ,Soyisim, Telefon numarası, E-posta bilgileri girilir")
+    public void glİsimYaşInAltındaBirSayıYazılırSoyisimTelefonNumarasıEPostaBilgileriGirilir(int arg0) {
+        ReusableMethods.clickByJS(pages.isimGir);
+        pages.isimGir.sendKeys(ConfigReader.getProperty("isim"), Keys.TAB ,
+                ConfigReader.getProperty("Soyisim"), Keys.TAB , ConfigReader.getProperty("Yas2"), Keys.TAB,
+                ConfigReader.getProperty("Telefon"), Keys.TAB , ConfigReader.getProperty("Eposta"), Keys.TAB, Keys.ENTER,Keys.ENTER);
+
+    }
+
+    @And("GL Minimum {int} karakter olmalıdır. uyarısı gelmeli")
+    public void glMinimumKarakterOlmalıdırUyarısıGelmeli(int arg0) {
+        Assert.assertTrue(pages.minimum18karakter.isDisplayed());
+
+    }
+
+    @Given("GL İsim, Soyisim, Yaş, Telefon numarası {int} ile baslamayan veri gir, E-posta bilgileri girilir")
+    public void glİsimSoyisimYaşTelefonNumarasıIleBaslamayanVeriGirEPostaBilgileriGirilir(int arg0) {
+        ReusableMethods.clickByJS(pages.isimGir);
+        pages.isimGir.sendKeys(ConfigReader.getProperty("isim"), Keys.TAB ,
+                ConfigReader.getProperty("Soyisim"), Keys.TAB , ConfigReader.getProperty("Yas"), Keys.TAB,
+                ConfigReader.getProperty("Telefon2"), Keys.TAB , ConfigReader.getProperty("Eposta"), Keys.TAB, Keys.ENTER,Keys.ENTER);
+
+
+    }
+
+    @And("GL Girdiğiniz format hatalı. uyarısı gelmeli")
+    public void glGirdiğinizFormatHatalıUyarısıGelmeli() {
+        Assert.assertTrue(pages.formatHatası.isDisplayed());
+
     }
 }
