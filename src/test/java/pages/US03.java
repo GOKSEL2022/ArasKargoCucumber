@@ -34,11 +34,20 @@ public class US03 {
     @FindBy(xpath = "//*[@*='add-location-btn ng-star-inserted']")
     public WebElement locasyonEkle;
 
-    @FindBy(xpath = "//*[@*='mat-form-field-flex ng-tns-c2842056177-15']")
+    @FindBy(xpath = "//*[@*='mat-form-field-infix ng-tns-c2842056177-15']")////*[@*='mat-form-field-flex ng-tns-c2842056177-15']
     public WebElement isimGir;
 
     @FindBy(xpath = "//*[@*='mat-form-field-flex ng-tns-c2842056177-20']")
     public WebElement egitimDurumu;
+    @FindBy(xpath = "//*[@*='mat-form-field-flex ng-tns-c2842056177-20']")
+    public List<WebElement> egitimDurumu1;
+
+    @FindBy(xpath = "//*[@class='mat-simple-snack-bar-content']")
+    public WebElement hatalıMesajYazisi;
+
+
+
+
 
 
 
