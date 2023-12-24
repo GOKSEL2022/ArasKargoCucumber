@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -65,10 +66,13 @@ public class US03_StepDefs {
     @And("GL Lokasyon ekle butonuna tıklanır")
     public void glLokasyonEkleButonunaTıklanır() {
        pages.locasyonEkle.click();
+     //  actions.moveToElement(pages.isimGir).perform();
+
     }
 
     @And("GL İsim, Soyisim, Yaş, Telefon numarası, E-posta bilgileri girilir")
     public void glİsimSoyisimYaşTelefonNumarasıEPostaBilgileriGirilir() {
+        ReusableMethods.clickByJS(pages.isimGir);
         pages.isimGir.sendKeys(ConfigReader.getProperty("isim"), Keys.TAB ,
                 ConfigReader.getProperty("Soyisim"), Keys.TAB , ConfigReader.getProperty("Yaş"), Keys.TAB,
                 ConfigReader.getProperty("Telefon"), Keys.TAB , ConfigReader.getProperty("Eposta"), Keys.TAB);
@@ -77,14 +81,18 @@ public class US03_StepDefs {
 
     @And("GL Egitim durumu seçilir")
     public void glEgitimDurumuSeçilir() {
-        Select select = new Select(pages.egitimDurumu);
-        ReusableMethods.selectRandomTextFromDropdown(select);
-
+        ReusableMethods.clickByJS(pages.egitimDurumu);
+        ReusableMethods.waitFor(2);
+        List <WebElement> sehirlerListesi = pages.egitimDurumu1;
+        Random rnd = new Random();
+        int rndnumber= rnd.nextInt(sehirlerListesi.size());
+        sehirlerListesi.get(rndnumber).click();
 
     }
 
     @And("GL sayfa kapatılır")
     public void glSayfaKapatılır() {
+        Driver.closeDriver();
     }
 
     @But("GL {int} saniye beklenir")
@@ -95,5 +103,23 @@ public class US03_StepDefs {
             throw new RuntimeException(e);
         }
 
+    }
+
+
+    @Given("GL İsim, Soyisim, Yaş, Telefon numarası, E-posta, Eğitim durumu, Güvenlik kodu bilgilerini boş bırak")
+    public void glİsimSoyisimYaşTelefonNumarasıEPostaEğitimDurumuGüvenlikKoduBilgileriniBoşBırak() {
+        pages.isimGir.sendKeys(Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,
+                Keys.TAB,Keys.TAB,Keys.TAB,Keys.ENTER);
+
+    }
+
+    @When("GL Başvurunu Gönder butonuna tıklanır")
+    public void glBaşvurunuGönderButonunaTıklanır() {
+    }
+
+    @And("GL Lütfen gerekli  hatalı alanları kontrol ediniz uyarısı görülür")
+    public void glLütfenGerekliHatalıAlanlarıKontrolEdinizUyarısıGörülür() {
+
+        Assert.assertTrue(pages.hatalıMesajYazisi.isDisplayed());
     }
 }
