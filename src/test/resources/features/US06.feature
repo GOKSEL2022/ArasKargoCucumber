@@ -1,3 +1,4 @@
+@us06  @runAll
 Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini yapabilmeli
 
   Background:
@@ -7,14 +8,12 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
     And AA Random bir ulke secer
 
 
-  @us06
-  Scenario: TC01 Kullanıcı yurt disi icin Dosya / Evrak ucretini hesaplayabilmeli
+  Scenario: TC01 Kullanıcı yurlt disi icin Dosya / Evrak ucretini hesaplayabilmeli
     When AA Dosya - Evrak tiklar ve hizmet turunu secer
     Then AA Gonderi Detayindan ucret goruntulendigini dogrular
     And AA Sayfayi kapatir
 
 
-  @us06
   Scenario Outline: TC02 Kullanıcı yurt disi icin Kutu / Koli ucretini hesaplayabilmeli
     And AA Kutu - Koli secer
     When AA "<agirlik>" "<boy>" "<yukseklik>" ve "<en>" bilgilerini girer
@@ -27,7 +26,6 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
       | 10      | 5   | 5         | 5  |
 
 
-  @us06
   Scenario Outline: TC03 Kullanıcı yurt disi icin Yeni Hesaplama Yap butonu ile ardisik hesaplama yapabilmeli – Kutu /Koli
     And AA Kutu - Koli secer
     When AA "<agirlik>" "<boy>" "<yukseklik>" ve "<en>" bilgilerini girer
@@ -48,7 +46,6 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
       | 55      | 54  | 20        | 23 |
 
 
-  @us06
   Scenario: TC04 Kullanıcı yurt disi icin Yeni Hesaplama Yap butonu ile ardisik hesaplama yapabilmeli – Dosya / Evrak
     When AA Dosya - Evrak tiklar ve hizmet turunu secer
     Then AA Gonderi Detayindan ucret goruntulendigini dogrular
@@ -61,7 +58,6 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
     And AA Sayfayi kapatir
 
 
-  @us06
   Scenario Outline: TC05 Kullanıcı yurt disi icin Kutu / Koli ucretini hesaplayamamali- Negative Test
     And AA Kutu - Koli secer
     When AA "<agirlik>" "<boy>" "<yukseklik>" ve "<en>" bilgilerini girer
@@ -75,7 +71,6 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
       | 0       | 5   | 5         | 5  |
 
 
-  @us06
   Scenario Outline: TC06 Kullanıcı yurt disi icin Kutu / Koli ucretini hesaplayamamali- Negative Test
   #Bug hesaplama yapmaması gerekirken hesaplama yapıyor. Oyuzden step yoruma alındı
     And AA Kutu - Koli secer
@@ -90,7 +85,6 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
       | 5       | 0   | 5         | 5  |
 
 
-  @us06
   Scenario Outline: TC07 Kullanıcı yurt disi icin Kutu / Koli ucretini hesaplayamamali- Negative Test
   #Bug hesaplama yapmaması gerekirken hesaplama yapıyor. Oyuzden step yoruma alındı
     And AA Kutu - Koli secer
@@ -105,7 +99,6 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
       | 5       | 5   | 0         | 5  |
 
 
-  @us06
   Scenario Outline: TC08 Kullanıcı yurt disi icin Kutu / Koli ucretini hesaplayamamali- Negative Test
   #Bug hesaplama yapmaması gerekirken hesaplama yapıyor. Oyuzden step yoruma alındı
     And AA Kutu - Koli secer
@@ -120,7 +113,6 @@ Feature: US06 Kullanıcı ucret Hesapla pop-upindaki yurt disi ucret hesabini ya
       | 5       | 5   | 8         | 0  |
 
 
-  @us06
   Scenario Outline: TC09 Kullanıcı yurt disi icin Kutu / Koli ucretinde Agirlik bilgisini boş birakamamali - Negative Test
     And AA Kutu - Koli secer
     When AA "<agirlik>" "<boy>" "<yukseklik>" ve "<en>" bilgilerini girer
