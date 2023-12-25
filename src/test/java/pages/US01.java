@@ -30,22 +30,22 @@ public class US01 {
     @FindBy(xpath = "//h1[@class='career-pages-hero__title']")
     public WebElement kariyerText;
 
-    @FindBy(xpath = "(//*[.='Surdurulebilirlik'])[1]")
+    @FindBy(xpath = "(//a[.='Sürdürülebilirlik'])[1]")
     public WebElement surdurebilirlikButon;
     @FindBy(xpath = "//h1")
     public WebElement surdurebilirlikText;
-    @FindBy(xpath = "(//*[@href='/is-ortakligi-sss'])[1]")
+    @FindBy(xpath = "(//*[.='İş Ortağımız Olun'])[1]")
     public WebElement isOrtagimizOlunButon;
     @FindBy(xpath = "(//*[@class='menu-item ng-tns-c588362358-0 ng-star-inserted'])[5]")
     public WebElement isOrtagimizOlunText;
-    @FindBy(xpath = "((//*[@href='/musteri-iliskileri'])[1]")
+    @FindBy(xpath = "(//*[.='Müşteri İlişkileri'])[1]")
     public WebElement musteriIliskileriButon;
     @FindBy(xpath = "(//h1[contains(text(),'Size nasil yardimci olabiliriz?')]")
     public WebElement musteriIliskileriText;
     //                    (//a[@href='/aras-kargo-spor-kulubu'])[1]
-    @FindBy(xpath = "(//*[@class='menu-item ng-tns-c588362358-0 ng-star-inserted'])[7]")
+    @FindBy(xpath = "(//*[.='Aras Kargo Spor Kulübü'])[1]")
     public WebElement arasKargaSporKulbuButon;
-    @FindBy(xpath = "(//*[@class='menu-item ng-tns-c588362358-0 ng-star-inserted'])[8]")
+    @FindBy(xpath = "(//*[@href='/genel-mudurluk'])[1]")
     public WebElement bizeUlasinButon;
 
 
@@ -55,36 +55,36 @@ public class US01 {
     public WebElement vizyonMisyonPolitikalarTextDrapdownButon;
 
 
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Yonetim Ekibimiz']")
+    @FindBy(xpath = "(//a[@href='/hakkimizda/yonetim-ekibimiz'])[1]")
     public WebElement yonetimEkibimizDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Haberler & Duyurular']")
+    @FindBy(xpath = "(//*[@href='/hakkimizda/haberler-ve-duyurular'])[1]")
     public WebElement haberDuyurularDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'Reklamlarımız')]")
+    @FindBy(xpath = "(//a[@href='/hakkimizda/reklamlarimiz'])[1]")
     public WebElement reklamlarimizDrapdownButon;
 
     @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Bireysel Hizmetlerimiz']")
     public WebElement bireyselHizmetlerimizDrapdownButon;
     @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Kurumsal Hizmetlerimiz']")
     public WebElement kurumsalHizmetlerimizDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Ambalaj urunlerimiz']")
+    @FindBy(xpath = "(//a[@href='/hizmetlerimiz/ambalaj-urunlerimiz'])[1]")
     public WebElement ambalajUrunlerimizDrapdownButon;
 
 
-    @FindBy(xpath = "/a[@class='ng-tns-c588362358-0'][contains(text(),'Araslar Bizde onem Tasır')]")
+    @FindBy(xpath = "(//a[@href='/kariyer/araslar-bizde-onem-tasir'])[1]")
     public WebElement araslarBizdeOnemTasirDrapdownButon;
-    @FindBy(xpath = "///a[@class='ng-tns-c588362358-0'][contains(text(),'Geleceğin Bizde onem Tasır')]")
+    @FindBy(xpath = "(//*[@href='/kariyer/gelecegin-bizde-onem-tasir'])[1]")
     public WebElement geleceginBizdeOnemTasirDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'İyi Bir Dunya Bizde onem Tasır')]")
+    @FindBy(xpath = "(//*[@href='/kariyer/iyi-bir-dunya-bizde-onem-tasir'])[1]")
     public WebElement iyiBirDunyaBizdeOnemTasirDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'Teknoloji Bizde onem Tasır')]")
+    @FindBy(xpath = "(//*[@href='/kariyer/teknoloji-bizde-onem-tasir'])[1]")
     public WebElement teknolojiBizdeOnemTasirDrapdownButon;
 
 
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'Surdurulebilirlik Rotası')]")
+    @FindBy(xpath = "(//*[@href='/surdurulebilirlik/surdurulebilirlik-rotasi'])[1]")
     public WebElement surdurulebilirlikRotasiDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'Sosyal Sorumluluk Platformlarımız')]")
+    @FindBy(xpath = "(//*[@href='/surdurulebilirlik/sosyal-sorumluluk-platformlarimiz'])[1]")
     public WebElement sosyalSorumlulukPlatformlarimizDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Kalite Yonetim Sistemi']")
+    @FindBy(xpath = "(//*[@href='/surdurulebilirlik/kalite-yonetim-sistemi'])[1]")
     public WebElement kaliteYonetimSistemiDrapdownButon;
 
 
@@ -100,35 +100,34 @@ public class US01 {
     public WebElement sikSorulanSorularDrapdownButon;
 
 
-    @FindBy(xpath = "//li[6]//ul[1]//li[4]//a[1]")
+    @FindBy(xpath = "(//*[@href='/musteri-iliskileri'])[2]")
     public WebElement arasaSorDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'Çağrı Merkezi')]")
+    @FindBy(xpath = "(//*[@href='/musteri-iliskileri'])[3]")
     public WebElement cagriMerkeziDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Hasar Tazmin']")
+    @FindBy(xpath = "(//*[@href='/musteri-iliskileri/hasar-tazmin'])[1]")
     public WebElement hasarTazminDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Geri Bildirim Formu']")
+    @FindBy(xpath = "(//*[@href='/musteri-iliskileri/geri-bildirim-formu'])[1]")
     public WebElement geriBildirimFormuDrapdownButon;
 
 
-    @FindBy(xpath = "(//*[@class='menu-item-ghost ng-tns-c588362358-0'])[4]")
+    @FindBy(xpath = "(//*[@href='/musteri-iliskileri/sss'])[1]")
     public WebElement ssSDrapdownButon;
 
 
-    @FindBy(xpath = "//li[@class='ng-tns-c588362358-0 ng-star-inserted']//a[@class='ng-tns-" +
-            "c588362358-0'][normalize-space()='Aras Kargo Spor Kulubu']")
+    @FindBy(xpath = "(//*[@href='/aras-kargo-spor-kulubu'])[1]")
     public WebElement arasKargoSporKulubuDrapdownButon;
 
 
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'İletisim')]")
+    @FindBy(xpath = "(//*[@href='/iletisim'])[1]")
     public WebElement iletisimDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Genel Mudurluk']")
+    @FindBy(xpath = "(//*[@href='/genel-mudurluk'])[2]")
     public WebElement genelMudurlukDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][normalize-space()='Bolge Mudurluklerimiz']")
+    @FindBy(xpath = "(//*[@href='/bolge-mudurluklerimiz'])[1]")
     public WebElement bolgeMudurluklerimizDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'subelerimiz')]")
+    @FindBy(xpath = "(//*[@href='/subelerimiz'])[1]")
     public WebElement subelerimizDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'Aras Burası Noktalarımız')]")
+    @FindBy(xpath = "(//*[@href='/aras-burasi-noktalarimiz'])[1]")
     public WebElement arasBurasiNoktalarimizDrapdownButon;
-    @FindBy(xpath = "//a[@class='ng-tns-c588362358-0'][contains(text(),'Musterimiz Olun')]")
+    @FindBy(xpath = "(//*[@href='/musterimiz-olun'])[1]")
     public WebElement musterimizOlunDrapdownButon;
 }
