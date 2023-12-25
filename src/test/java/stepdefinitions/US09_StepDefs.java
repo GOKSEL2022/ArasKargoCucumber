@@ -19,7 +19,6 @@ public class US09_StepDefs {
     Random rnd;
     String randomPhoneNo, mail, randomIslemNo;
 
-//////////
     @Given("AA Kullanıcı Urle gider")
     public void aaKullanıcıUrleGider() {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
