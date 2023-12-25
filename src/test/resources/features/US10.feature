@@ -10,6 +10,7 @@ Feature: US10_gelecegin_bizde_onem_tasir_test
     Scenario: US10_TC01
       Given GC Kullanici sayfayi kapatir
 
+      @US10_TC02
     Scenario: US10_TC02
       Given GC Kullanici Aras Kargo Is Basvurulari basligini goruntuler
       When  GC Kullanici Aras Kargo Is Basvurulari  altinda aciklamayi goruntuler
