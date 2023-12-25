@@ -4,12 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
 public class Driver {
 
-    private Driver(){
+    private Driver() {
 
     }
 
@@ -24,27 +26,26 @@ public class Driver {
      */
 
     static WebDriver driver;
+
     public static WebDriver getDriver() {
         if (driver == null) {
-            switch (ConfigReader.getProperty("browser")){
-                case "edge" :
-                    //  WebDriverManager.edgedriver().setup();
+            switch (ConfigReader.getProperty("browser")) {
+                case "edge":
                     driver = new EdgeDriver();
                     break;
-                case "chrome" :
-                    //    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+//                case "chrome":                        //default icinde chrome old. için bu switch bloguna gerek yok.
+//                    driver = new ChromeDriver();      // aynı zamanda chromeda calisması icin conf. propertiese browser yazmamıza gerek yok
+//                    break;
+                case "safari":
+                    driver = new SafariDriver();
                     break;
-                case "opera" :
-                    //   WebDriverManager.operadriver().setup();
-                    //      driver = new OperaDriver();
+                case "firefox":
+                    driver = new FirefoxDriver();
                     break;
-                case "headless-chrome" :
-                    //  WebDriverManager.chromedriver().setup();
-                    //driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                case "headless-chrome":
+                    driver = new ChromeDriver(new ChromeOptions().addArguments("--headless=new"));
                     break;
                 default:
-                    //   WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
             }
             driver.manage().window().maximize();
@@ -52,12 +53,14 @@ public class Driver {
         }
         return driver;
     }
+
     public static void closeDriver() {
         if (driver != null) { // driver'a değer atanmışsa kapat
             driver.close();
             driver = null; // Kapandıktan sonra sonraki açmaları garanti altına almak için driver'i tekrar null yaptık
         }
     }
+
     public static void quitDriver() {
         if (driver != null)
             driver.quit();
