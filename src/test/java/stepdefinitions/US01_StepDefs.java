@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
@@ -19,7 +20,7 @@ public class US01_StepDefs {
 
     @Given("MS Kullanici ana sayfaya  gider")
     public void kullaniciAnaSayfayaGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("aras_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
         ReusableMethods.waitFor(1);
         ReusableMethods.clickWithTimeOut(us01.popupCloseHome, 1);
     }
@@ -136,6 +137,7 @@ public class US01_StepDefs {
     @And("MS Reklamlarimiz sayfanin acildigini dogrular")
     public void msReklamlarimizSayfaninAcildiginiDogrular() {
     }
+
 }
 
 
