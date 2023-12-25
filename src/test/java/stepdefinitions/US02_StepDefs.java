@@ -51,8 +51,8 @@ public class US02_StepDefs {
     }
     @And("GC Kullanici Aras Kargo Hizmetler Fiyat Listesini goruntuler")
     public void gcKullaniciArasKargoHizmetlerFiyatListesiniGoruntuler() throws InterruptedException {
-        ReusableMethods.switchToWindow(1);
-        Thread.sleep(2000);
+        //ReusableMethods.switchToWindow(1);
+        //Thread.sleep(2000);
         assert Driver.getDriver().getCurrentUrl().contains("Aras_Hizmetler_fiyat_listesi");
     }
     @And("GC Kullanici indirme linkini goruntuler")
