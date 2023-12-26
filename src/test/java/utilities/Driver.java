@@ -35,7 +35,7 @@ public class Driver {
                     driver = new EdgeDriver();
                     break;
 //                case "chrome":                        //default icinde chrome old. için bu switch bloguna gerek yok.
-//         a           driver = new ChromeDriver();      // aynı zamanda chromeda calisması icin conf. propertiese browser yazmamıza gerek yok
+//                    driver = new ChromeDriver();      // aynı zamanda chromeda calisması icin conf. propertiese browser yazmamıza gerek yok
 //                    break;
                 case "safari":
                     driver = new SafariDriver();
