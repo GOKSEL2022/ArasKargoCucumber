@@ -1,5 +1,6 @@
 package utilities;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -34,7 +35,7 @@ public class Driver {
                     driver = new EdgeDriver();
                     break;
 //                case "chrome":                        //default icinde chrome old. için bu switch bloguna gerek yok.
-//                    driver = new ChromeDriver();      // aynı zamanda chromeda calisması icin conf. propertiese browser yazmamıza gerek yok
+//         a           driver = new ChromeDriver();      // aynı zamanda chromeda calisması icin conf. propertiese browser yazmamıza gerek yok
 //                    break;
                 case "safari":
                     driver = new SafariDriver();
