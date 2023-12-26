@@ -6,7 +6,7 @@ Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmel
     And AA Anasayfada Size Nasıl Yardimci olabilirim PopUpa tiklar
     When AA Acilan pencereden Devam butonuna tiklar
 
-
+@wip
   Scenario: TC01 Kullanici istenen Islem seçeneklerini secebilmeli
 
     And AA Valid random ad soyad bilgilerini girer ve gonder butonuna tiklar
@@ -56,7 +56,7 @@ Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmel
       | asdad@ds.com |
       | as^#@g       |
 
-
+@wip
   Scenario: TC05 Kullanici Çıkış yazarak servisten ayrılabilmeli
     And AA Valid random ad soyad bilgilerini girer ve gonder butonuna tiklar
     And AA Valid random telefon numarası girer ve gonder butonuna tiklar
