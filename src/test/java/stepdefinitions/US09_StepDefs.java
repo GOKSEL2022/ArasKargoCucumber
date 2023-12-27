@@ -82,7 +82,7 @@ public class US09_StepDefs {
     public void aaKullaniciRandomIslemNumarasiGirer() {
 //        int randomNumber = rand.nextInt(10) + 1;  ->1 to 10
         rnd = new Random();
-        randomIslemNo = String.valueOf(rnd.nextInt(us09.islemMetniList.size() - 2) + 1);
+        randomIslemNo = String.valueOf(rnd.nextInt(us09.islemMetniList.size()) + 1);
         us09.islemNoTextBox.sendKeys(randomIslemNo);
         us09.gonderButton.click();
     }
