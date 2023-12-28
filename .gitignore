@@ -18,4 +18,4 @@ buildNumber.properties
 *.iml
 ExtentReports/
 /runners/
-!**/src/test/**/target/
+!**/src/test/java/runners
