@@ -1,5 +1,4 @@
 package stepdefinitions;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -7,11 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import pages.US02;
 import pages.US12;
 import utilities.Driver;
-import utilities.ReusableMethods;
-
 import static utilities.ReusableMethods.clickWithTimeOut;
 import static utilities.ReusableMethods.scrollIntoViewJS;
-
 public class US12_StepDefs {
     US12 us12=new US12();  US02 us02 =new US02();
     Actions actions=new Actions(Driver.getDriver());
@@ -26,8 +22,7 @@ public class US12_StepDefs {
     }
     @When("GC Kullanici Sik Sorulan Sorular sayfasinda oldugunu dogrular")
     public void gcKullaniciSikSorulanSorularSayfasindaOldugunuDogrular() {
-        assert Driver.getDriver().getCurrentUrl().contains("sss");
-        //assert us12.sikSorulanSorularTitleTextMusteriIliskileri.isDisplayed();
+        assert Driver.getDriver().getCurrentUrl().contains("musteri-iliskileri/sss");
     }
     @Given("GC Kullanici sayfadaki ilk soruyu goruntuler")
     public void gcKullaniciSayfadakiIlkSoruyuGoruntuler() {
@@ -68,7 +63,6 @@ public class US12_StepDefs {
     }
     @And("GC Kullanici GooglePlay sayfasina yonlendirildigini dogrular")
     public void gcKullaniciGooglePlaySayfasinaYonlendirildiginiDogrular() {
-        //ReusableMethods.switchToWindow(1);
         Driver.getDriver().getCurrentUrl().contains("play.google.com/store/apps");
     }
     @When("GC Kullanici cevapta belirtilen mobil uygulamalardan AppStore a tiklar")
@@ -77,7 +71,6 @@ public class US12_StepDefs {
     }
     @And("GC Kullanici AppStore  sayfasina yonlendirildigini dogrular")
     public void gcKullaniciAppStoreSayfasinaYonlendirildiginiDogrular() {
-        //ReusableMethods.switchToWindow(1);
         Driver.getDriver().getCurrentUrl().contains("apps.apple.com/ca/app/aras-kargo");
     }
     @When("GC Kullanici cevapta belirtilen mobil uygulamalardan AppGallery e tiklar")
@@ -86,7 +79,6 @@ public class US12_StepDefs {
     }
     @And("GC Kullanici AppGallery sayfasina yonlendirildigini dogrular")
     public void gcKullaniciAppGallerySayfasinaYonlendirildiginiDogrular() {
-        //ReusableMethods.switchToWindow(1);
         Driver.getDriver().getCurrentUrl().contains("appgallery.huawei.com/app");
     }
 }

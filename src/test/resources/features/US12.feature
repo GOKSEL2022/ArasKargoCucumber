@@ -1,4 +1,4 @@
-@US02
+@US12
 Feature:US12_SSS(sik_sorulan_sorular)_sayfa_test
   Background:
     Given GC Kullanici "https://www.araskargo.com.tr"  url ye gelir

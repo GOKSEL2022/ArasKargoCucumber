@@ -72,5 +72,5 @@ Feature: dashboarddaki_kategori_secenekleri_testi
     And   EK Kullanici bolge personeli secenegini tiklar
     And   EK Kullanici iki saniye bekler
     When  EK Kullanici dropdown icinde TESEKKURLER secildigini dogrular
-    And   EK Kullanici iki saniye bekler
+   # And   EK Kullanici iki saniye bekler
     Then  EK Kullanici sayfayi kapatir

@@ -63,7 +63,7 @@ public class US08 {
     @FindBy(xpath = "//*[text()=' TEŞEKKÜRLER ']")
     public WebElement tesekkurlerTextDropdown;
 
-    @FindBy(xpath = "//div[@id='mat-select-value-3']")
+    @FindBy(xpath = "//*[@class='mat-select-placeholder mat-select-min-line ng-tns-c84697453-17 ng-star-inserted']")
     public WebElement konuBasligiSecinDropdownGeriBildirimFormu;
 
     @FindBy(xpath = "(//*[.=' E-ÖDEME BİLGİSİ '])[1]")

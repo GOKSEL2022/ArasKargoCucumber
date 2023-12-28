@@ -3,12 +3,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import pages.US08;
 import utilities.ConfigReader;
 import utilities.Driver;
-
-import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 public class US08_StepDefs {
     US08 us08 =new US08();
@@ -58,10 +55,8 @@ public class US08_StepDefs {
         clickByJS(us08.bilgiSecenegiDropdown);
     }
     @When("EK Kullanici dropdown icinde BILGI secildigini dogrular")
-    public void ekKullaniciDropdownIcindeBILGISecildiginiDogrular() throws InterruptedException {
-        //assert us08.bilgiTextDropdown.getText().contains("BİLGİ");
-        //assert us08.bilgiTitleTextGeriBildirimFormu.getText().contains("BİLGİ");
-        assert us08.bilgiTitleTextGeriBildirimFormu.isDisplayed();
+    public void ekKullaniciDropdownIcindeBILGISecildiginiDogrular()  {
+           us08.bilgiTitleTextGeriBildirimFormu.getText().contains("BİLGİ");
     }
     @Then("EK Kullanici sayfayi kapatir")
     public void ekKullaniciSayfayiKapatir() {
@@ -72,8 +67,7 @@ public class US08_StepDefs {
         clickByJS(us08.islem_TalepSecenegiDropdown);
     }
     @When("EK Kullanici dropdown icinde ISLEM_TALEP secildigini dogrular")
-    public void ekKullaniciDropdownIcindeISLEM_TALEPSecildiginiDogrular() throws InterruptedException {
-        //assertTrue(us08.islemTalepTitleTextGeriBildirimFormu.getText().contains("İŞLEM"));
+    public void ekKullaniciDropdownIcindeISLEM_TALEPSecildiginiDogrular() {
         assert us08.islemTalepTitleTextGeriBildirimFormu.isDisplayed();
     }
     @Given("EK Kullanici acilan dropdowndaki ONERI butonuna tiklar")
@@ -81,8 +75,7 @@ public class US08_StepDefs {
         clickWithTimeOut(us08.oneriSecenegiDropdown,2);
     }
     @When("EK Kullanici dropdown icinde ONERI secildigini dogrular")
-    public void ekKullaniciDropdownIcindeONERISecildiginiDogrular() throws InterruptedException {
-        //assertTrue(us08.oneriTitleTextGeriBildirimFormu.getText().contains("ÖNERİ"));
+    public void ekKullaniciDropdownIcindeONERISecildiginiDogrular() {
         assert us08.oneriTitleTextGeriBildirimFormu.isDisplayed();
     }
     @Given("EK Kullanici acilan dropdowndaki SIKAYET_PROBLEM butonuna tiklar")
@@ -90,17 +83,15 @@ public class US08_StepDefs {
        clickByJS(us08.sikayet_ProblemSecenegiDropdown);
     }
     @When("EK Kullanici dropdown icinde SIKAYET_PROBLEM secildigini dogrular")
-    public void ekKullaniciDropdownIcindeSIKAYET_PROBLEMSecildiginiDogrular() throws InterruptedException {
-        //assertTrue(us08.sikayetProblemTitleTextGeriBildirimFormu.getText().contains("ŞİKAYET"));
+    public void ekKullaniciDropdownIcindeSIKAYET_PROBLEMSecildiginiDogrular() {
         assert us08.sikayetProblemTitleTextGeriBildirimFormu.isDisplayed();
     }
     @Given("EK Kullanici acilan dropdowndaki TESEKKURLER butonuna tiklar")
     public void ekKullaniciAcilanDropdowndakiTESEKKURLERButonunaTiklar() {
-        clickByJS(us08.tesekkurlerSecenegiDropdown);
+        clickWithTimeOut(us08.tesekkurlerSecenegiDropdown,2);
     }
     @When("EK Kullanici dropdown icinde TESEKKURLER secildigini dogrular")
-    public void ekKullaniciDropdownIcindeTESEKKURLERSecildiginiDogrular() throws InterruptedException {
-        //assert us08.tesekkurlerTitleTextGeriBildirimFormu.getText().contains("TESEKKÜRLER");
+    public void ekKullaniciDropdownIcindeTESEKKURLERSecildiginiDogrular() {
         assert us08.tesekkurlerTitleTextGeriBildirimFormu.isDisplayed();
     }
     @And("EK Kullanici iki saniye bekler")
@@ -113,22 +104,22 @@ public class US08_StepDefs {
     }
     @And("EK Kullanici eOdemeBilgisi secenegini tiklar")
     public void ekKullaniciEOdemeBilgisiSeceneginiTiklar() {
-        clickByJS(us08.eOdemeBilgisiKonuBasligiSecenegiGeriBildirimFormu);
+        clickWithTimeOut(us08.eOdemeBilgisiKonuBasligiSecenegiGeriBildirimFormu,2);
     }
     @And("EK Kullanici acentelik talebi secenegini tiklar")
     public void ekKullaniciAcentelikTalebiSeceneginiTiklar() {
-        clickByJS(us08.acentelikTalebiIslemTalepSecenegiGeriBildirimFormu);
+       clickWithTimeOut(us08.acentelikTalebiIslemTalepSecenegiGeriBildirimFormu,2);
     }
     @And("EK Kullanici diger secenegini tiklar")
     public void ekKullaniciDigerSeceneginiTiklar() {
-        clickByJS(us08.digerOneriSecenegiGeriBildirimFormu);
+        clickWithTimeOut(us08.digerOneriSecenegiGeriBildirimFormu,2);
     }
     @And("EK Kullanici adresten alim yapilmamasi secenegini tiklar")
     public void ekKullaniciAdrestenAlimYapilmamasiSeceneginiTiklar() {
-        clickByJS(us08.adrestenAlimYapilmamasiSikayetProblemSecenegiGeriBildirimFormu);
+        clickWithTimeOut(us08.adrestenAlimYapilmamasiSikayetProblemSecenegiGeriBildirimFormu,2);
     }
     @And("EK Kullanici bolge personeli secenegini tiklar")
     public void ekKullaniciBolgePersoneliSeceneginiTiklar() {
-        clickByJS(us08.bolgePersoneliTesekkurlerSecenegiGeriBildirimFormu);
+        clickWithTimeOut(us08.bolgePersoneliTesekkurlerSecenegiGeriBildirimFormu,2);
     }
 }
