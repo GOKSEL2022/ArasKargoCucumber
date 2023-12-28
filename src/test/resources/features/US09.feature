@@ -1,5 +1,5 @@
 @us09  @runAll  @smoke
-Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmeli
+Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmeli.
 
   Background:
     Given AA Kullanıcı Urle gider
