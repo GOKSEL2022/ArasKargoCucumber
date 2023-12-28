@@ -1,3 +1,4 @@
+@US03
 Feature: US_03  Kullanıcı Acentemiz Olun sekmesinden başvuru yapabilmeli
 
   Background:
