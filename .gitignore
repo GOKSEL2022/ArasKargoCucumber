@@ -17,4 +17,5 @@ buildNumber.properties
 .idea
 *.iml
 ExtentReports/
-runners/
+/runners/
+!**/src/test/java/runners
