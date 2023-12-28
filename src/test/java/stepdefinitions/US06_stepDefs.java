@@ -71,7 +71,7 @@ public class US06_stepDefs {
         } catch (Exception e) {
             uS06page.nereyeTextBox.sendKeys("a");
             ulkelerListesi = uS06page.ulkeIsimleri_List;
-            rndNumber = rnd.nextInt(1, ulkelerListesi.size() + 1);
+            rndNumber = rnd.nextInt(ulkelerListesi.size())+1;
             ulkelerListesi.get(rndNumber).click();
         }
 
@@ -140,7 +140,7 @@ public class US06_stepDefs {
         uS06page.nereyeTextBox.sendKeys("a");
         ulkelerListesi = uS06page.ulkeIsimleri_List;
         rnd = new Random();
-        rndNumber = rnd.nextInt(1, ulkelerListesi.size() + 1);
+        rndNumber = rnd.nextInt(ulkelerListesi.size())+1;
         ulkelerListesi.get(rndNumber).click();
     }
 
