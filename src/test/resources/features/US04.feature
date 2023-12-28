@@ -1,4 +1,4 @@
-@us04
+@us04 @runAll  @smoke
 
 Feature: US_04 kullanici uye girisi butonunu tiklayabilmeli
   Scenario: TC01 kullanici uye girisi butonunu tiklayabilmeli
