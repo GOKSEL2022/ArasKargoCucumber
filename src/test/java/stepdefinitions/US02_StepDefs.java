@@ -3,17 +3,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.US02;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
-
 import static utilities.ReusableMethods.*;
-
 public class US02_StepDefs {
     US02 us02 =new US02();
     Actions actions=new Actions(Driver.getDriver());
@@ -26,7 +20,7 @@ public class US02_StepDefs {
         assert Driver.getDriver().getCurrentUrl().contains("araskargo");
     }
     @When("GC Kullanici Hizmetlerinmiz basligina gelir")
-    public void kullanici_hizmetlerinmiz_basligina_gelir() throws InterruptedException {
+    public void kullanici_hizmetlerinmiz_basligina_gelir()  {
         clickWithTimeOut(us02.popupCloseHome,3);
         actions.moveToElement(us02.hizmetlerimizLinkHome).perform();
     }
@@ -35,8 +29,9 @@ public class US02_StepDefs {
         clickWithTimeOut(us02.ambalajUrunlerimizHizmetlerimizLinkHome,3);
     }
     @When("GC Kullanici Ambalaj Urunlerimiz sayfasinda oldugunu dogrular")
-    public void kullanici_ambalaj_urunlerimiz_sayfasinda_oldugunu_dogrular() {
-        assert Driver.getDriver().getCurrentUrl().contains("ambalaj-urunlerimiz");
+    public void kullanici_ambalaj_urunlerimiz_sayfasinda_oldugunu_dogrular() throws InterruptedException {
+        Thread.sleep(1000);
+        assert Driver.getDriver().getCurrentUrl().contains("hizmetlerimiz/ambalaj-urunlerimiz");
     }
     @Then("GC Kullanici sayfayi kapatir")
     public void kullanici_sayfayi_kapatir() {
@@ -52,13 +47,14 @@ public class US02_StepDefs {
         assert us02.kutuKoliSecenekleriAmbalajUrunleri.isDisplayed();
     }
     @And("GC Kullanici Ambalaj fiyatlari alanina tiklar")
-    public void gcKullaniciAmbalajFiyatlariAlaninaTiklar() throws InterruptedException {
+    public void gcKullaniciAmbalajFiyatlariAlaninaTiklar() {
         clickByJS(us02.ambalajFiyatlariButonAmbalajUrunleri);
     }
     @And("GC Kullanici Aras Kargo Hizmetler Fiyat Listesini goruntuler")
     public void gcKullaniciArasKargoHizmetlerFiyatListesiniGoruntuler() throws InterruptedException {
         Thread.sleep(2000);
-        assert Driver.getDriver().getCurrentUrl().contains("Aras_Hizmetler_fiyat_listesi");
+        switchToWindow(1);
+        assert Driver.getDriver().getCurrentUrl().contains("Aras_Hizmetler_fiyat_listesi_2023");
     }
     @And("GC Kullanici indirme linkini goruntuler")
     public void gcKullaniciIndirmeLinkiniGoruntuler() {
@@ -71,7 +67,6 @@ public class US02_StepDefs {
         indirLinkiAmbalajUrunleri.click();
 
          */
-
     }
     @When("GC Kullanici yazdirma linkini goruntuler")
     public void gcKullaniciYazdirmaLinkiniGoruntuler() {
