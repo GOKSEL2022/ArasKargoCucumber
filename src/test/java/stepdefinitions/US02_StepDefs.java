@@ -3,6 +3,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.US02;
 import utilities.ConfigReader;
@@ -54,17 +57,30 @@ public class US02_StepDefs {
     }
     @And("GC Kullanici Aras Kargo Hizmetler Fiyat Listesini goruntuler")
     public void gcKullaniciArasKargoHizmetlerFiyatListesiniGoruntuler() throws InterruptedException {
-        switchToWindow(1);
         Thread.sleep(2000);
         assert Driver.getDriver().getCurrentUrl().contains("Aras_Hizmetler_fiyat_listesi");
     }
     @And("GC Kullanici indirme linkini goruntuler")
     public void gcKullaniciIndirmeLinkiniGoruntuler() {
-       // SearchContext searchContext=Driver.getDriver().findElement(By.xpath("//viewer-download-controls")).getShadowRoot();
-       // WebElement shadowElemen=searchContext.findElement(By.)
+        /*
+        switchToWindow(1);
+
+        SearchContext pdfIndir=Driver.getDriver().findElement(By.cssSelector("cr-icon-button[id=download]")).getShadowRoot();
+        WebElement indirLinkiAmbalajUrunleri=pdfIndir.findElement(By.id("maskedImage"));
+        //assert indirLinkiAmbalajUrunleri.isDisplayed();
+        indirLinkiAmbalajUrunleri.click();
+
+         */
+
     }
     @When("GC Kullanici yazdirma linkini goruntuler")
     public void gcKullaniciYazdirmaLinkiniGoruntuler() {
+        /*
+        SearchContext pdfYazdir=Driver.getDriver().findElement(By.cssSelector("tabindex=\"0")).getShadowRoot();
+        WebElement yazdirLinkiAmbalajUrunleri=pdfYazdir.findElement(By.cssSelector("iron-icon"));
+        assert yazdirLinkiAmbalajUrunleri.isDisplayed();
+
+         */
     }
     @Given("GC Kullanici Dosya_Evrak basligina tiklar")
     public void gcKullaniciDosya_EvrakBasliginaTiklar() {
