@@ -18,6 +18,9 @@ public class US02 {
     @FindBy(xpath = "(//a[@href='/hizmetlerimiz/ambalaj-urunlerimiz'])[1]")
     public WebElement ambalajUrunlerimizHizmetlerimizLinkHome;
 
+    @FindBy(xpath = "//*[@class='detail-pages-hero__wrapper']")
+    public WebElement ambalajUrunlerimizTextTitle;
+
     @FindBy(xpath = "(//div[@class='packaging-products-tabbed__button-title'])[1]")
     public WebElement kutuKoliButonAmbalajUrunleri;
 
@@ -35,4 +38,7 @@ public class US02 {
 
     @FindBy(xpath = "//div[@id='sizer']")
     public WebElement arasKargoHizmetlerFiyatListesiPDF;
+
+    @FindBy(xpath = "//*[@class='career-pages-hero__content']")
+    public WebElement geleceginBizdeOnemTasirTextTitle;
 }

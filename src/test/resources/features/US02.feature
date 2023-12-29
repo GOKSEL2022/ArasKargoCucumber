@@ -1,4 +1,4 @@
-@US02
+@US02 @goksel
 Feature:US002_ambalaj_urunleri_test
   Background:
     Given  GC Kullanici "https://www.araskargo.com.tr"  url ye gelir
@@ -9,7 +9,7 @@ Feature:US002_ambalaj_urunleri_test
 
   Scenario:US002_TC01
     Then   GC Kullanici sayfayi kapatir
-
+    @smoke
   Scenario: US002_TC02
     Given GC Kullanici Kutu_Koli basligini goruntuler
     When  GC Kullanici Kutu_Koli basliginin seceneklerini goruntuler

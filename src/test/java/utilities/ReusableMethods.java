@@ -37,6 +37,7 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -48,6 +49,7 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     //========Hover Over=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
@@ -86,6 +88,25 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
+
+    public static void wait(int secs) {
+
+        try {
+            Thread.sleep(1000 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
@@ -118,6 +139,7 @@ public class ReusableMethods {
             }
         }
     }
+
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -149,8 +171,10 @@ public class ReusableMethods {
 
         return element;
     }
+
     /**
      * Performs double click action on an element
+     *
      * @param element
      */
     public static void doubleClick(WebElement element) {
@@ -175,6 +199,7 @@ public class ReusableMethods {
 
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
+     *
      * @param select
      * @return
      */
@@ -185,6 +210,7 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
+
     public static void clickByJS(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].click();", element);
@@ -208,6 +234,7 @@ public class ReusableMethods {
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
     /*
     public void convertJsonToJavaClass(URL source, File outputJavaClassDirectory, String packageName, String javaClassName)
 
@@ -239,4 +266,45 @@ public class ReusableMethods {
         List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(list.get(windowNumber));
     }
-}
+
+    public static void navigateToUrl() {
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        waitFor(1);
+    }
+
+    public static void closePopUp() {
+        try {
+
+            Driver.getDriver()
+                    .findElement(By.xpath("//div[@class='popup-close']//*[@xmlns='http://www.w3.org/2000/svg']"))
+                    .click();
+        } catch (Exception e) {
+        }
+    }
+
+    public static void closeCookies() {
+        waitFor(1);
+
+        try {
+            SearchContext shadowRootElement =
+                    Driver.getDriver().findElement(By.cssSelector(".efilli-layout-default")).getShadowRoot();
+            WebElement hiddenElement =
+                    shadowRootElement.findElement(By.cssSelector(".banner__accept-button"));
+//            shadowRootElement.findElement(By.cssSelector("banner__reject-button"));
+            hiddenElement.click();
+        } catch (Exception ignored) {
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+   }
