@@ -47,6 +47,6 @@ public class US06 {
     @FindBy(xpath = "//*[@class='item-total-price']")
     public List<WebElement> itemTotalPriceList;
     @FindBy(xpath = "//small[@class='error-block ng-star-inserted']")
-    public WebElement agirlikInvalidMsg;
+    public WebElement agirlikInvalidMsg_Text;
 
 }

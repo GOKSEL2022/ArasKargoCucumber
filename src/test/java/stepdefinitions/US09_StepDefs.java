@@ -13,30 +13,15 @@ import static utilities.ReusableMethods.*;
 public class US09_StepDefs {
 
     US09 us09 = new US09();
-    SearchContext shadowRootElement;
-    WebElement hiddenElement;
     Faker faker;
     Random rnd;
     String randomPhoneNo, mail, randomIslemNo;
 
     @Given("AA Kullanıcı Urle gider")
     public void aaKullanıcıUrleGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-        try {
-            us09.popUpClose.click();
-        }catch (Exception e){}
-
-        waitFor(1);
-
-        try {
-            shadowRootElement =
-                    Driver.getDriver().findElement(By.cssSelector(".efilli-layout-default")).getShadowRoot();
-            hiddenElement =
-                    shadowRootElement.findElement(By.cssSelector(".banner__accept-button"));
-//            shadowRootElement.findElement(By.cssSelector("banner__reject-button"));
-            hiddenElement.click();
-        } catch (Exception ignored) {
-        }
+        navigateToUrl();
+        closePopUp();
+        closeCookies();
     }
 
     @And("AA Anasayfada Size Nasıl Yardimci olabilirim PopUpa tiklar")
@@ -105,7 +90,7 @@ public class US09_StepDefs {
 
     @Then("AA Uyarı mesajini dogrular")
     public void aaUyarıMesajiniDogrular() {
-        assertTrue("Error message is not displayed", us09.hataMesaji.isDisplayed());
+        assertTrue("Error message is not displayed", us09.hataMesajiText.isDisplayed());
         waitFor(2);
     }
 
@@ -138,7 +123,7 @@ public class US09_StepDefs {
 
     @Then("AA Ilgili mesaji dogrular")
     public void aaIlgiliMesajiDogrular() {
-        assertTrue(us09.tesekkurMesaji.getText().contains("teşekkür"));
+        assertTrue(us09.tesekkurMesajiText.getText().contains("teşekkür"));
 
     }
 }

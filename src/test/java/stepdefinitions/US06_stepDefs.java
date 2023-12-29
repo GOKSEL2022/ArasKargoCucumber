@@ -14,8 +14,6 @@ import static utilities.ReusableMethods.*;
 public class US06_stepDefs {
 
     US06 uS06page = new US06();
-    SearchContext shadowRootElement;
-    WebElement hiddenElement;
     Actions actions;
     int rndNumber, commaIndex, itemTotalPrice;
     List<WebElement> ulkelerListesi, priceList;
@@ -24,24 +22,9 @@ public class US06_stepDefs {
 
     @Given("AA Kullanıcı belirtilen Urle gider")
     public void aaKullanıcıBelirtilenUrleGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-        waitFor(1);
-
-        try {
-            uS06page.popUpClose.click();
-        } catch (Exception e) {
-        }
-
-        waitFor(1);
-        try {
-            shadowRootElement =
-                    Driver.getDriver().findElement(By.cssSelector(".efilli-layout-default")).getShadowRoot();
-            hiddenElement =
-                    shadowRootElement.findElement(By.cssSelector(".banner__accept-button"));
-//            shadowRootElement.findElement(By.cssSelector("banner__reject-button"));
-            hiddenElement.click();
-        } catch (Exception e) {
-        }
+        navigateToUrl();
+        closePopUp();
+        closeCookies();
     }
 
     @When("AA Kullanıcı anasayfada Ucret Hesapla butonunu tiklar")
@@ -159,6 +142,6 @@ public class US06_stepDefs {
 
     @Then("AA Agirlik textboxinda uyarı mesajini dogrular")
     public void aaAgirlikTextboxindaUyarıMesajiniDogrular() {
-        assertTrue("Error message is not visible", uS06page.agirlikInvalidMsg.isDisplayed());
+        assertTrue("Error message is not visible", uS06page.agirlikInvalidMsg_Text.isDisplayed());
     }
 }
