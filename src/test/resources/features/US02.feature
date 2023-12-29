@@ -1,4 +1,4 @@
-@US02
+@US02 @goksel
 Feature:US002_ambalaj_urunleri_test
   Background:
     Given  GC Kullanici "https://www.araskargo.com.tr"  url ye gelir

@@ -30,8 +30,8 @@ public class US02_StepDefs {
     }
     @When("GC Kullanici Ambalaj Urunlerimiz sayfasinda oldugunu dogrular")
     public void kullanici_ambalaj_urunlerimiz_sayfasinda_oldugunu_dogrular() throws InterruptedException {
-        Thread.sleep(1000);
-        assert Driver.getDriver().getCurrentUrl().contains("hizmetlerimiz/ambalaj-urunlerimiz");
+        Thread.sleep(2000);
+        assert us02.ambalajUrunlerimizTextTitle.isDisplayed();
     }
     @Then("GC Kullanici sayfayi kapatir")
     public void kullanici_sayfayi_kapatir() {

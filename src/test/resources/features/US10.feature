@@ -1,4 +1,4 @@
-@US10
+@US10 @goksel
 Feature: US10_gelecegin_bizde_onem_tasir_test
   Background:
     Given GC Kullanici "https://www.araskargo.com.tr"  url ye gelir

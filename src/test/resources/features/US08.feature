@@ -1,4 +1,4 @@
-@US08
+@US08 @goksel
 Feature: dashboarddaki_kategori_secenekleri_testi
   Background:
     Given EK Kullanici verilen URL'e gider
