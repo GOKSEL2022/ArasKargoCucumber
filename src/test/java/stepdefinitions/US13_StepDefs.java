@@ -29,16 +29,9 @@ public class US13_StepDefs {
     US13 us13 = new US13();
     @Given("SO Kullanici urle gider")
     public void so_kullanici_urle_gider() throws InterruptedException {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-        us13.popUpClose.click();
-        try {
-            shadowRootElement =
-                    Driver.getDriver().findElement(By.cssSelector(".efilli-layout-default")).getShadowRoot();
-            hiddenElement =
-                    shadowRootElement.findElement(By.cssSelector(".banner__accept-button"));
-            hiddenElement.click();
-        } catch (Exception ignored) {
-        }
+        navigateToUrl();
+        closePopUp();
+        closeCookies();
     }
     @When("SO Kullanici Surdurulebilirlik sekmesinden Kalite Yonetim Sistemini tiklar")
     public void so_kullanici_surdurulebilirlik_sekmesinden_kalite_yonetim_sistemini_tiklar() {
