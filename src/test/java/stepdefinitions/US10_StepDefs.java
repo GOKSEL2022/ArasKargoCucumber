@@ -1,5 +1,4 @@
 package stepdefinitions;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,10 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.US02;
 import pages.US10;
 import utilities.Driver;
-import utilities.ReusableMethods;
-
 import static utilities.ReusableMethods.*;
-
 public class US10_StepDefs {
     US02 us02 =new US02(); US10 us10=new US10();
     Actions actions=new Actions(Driver.getDriver());
@@ -27,7 +23,6 @@ public class US10_StepDefs {
     @And("GC Kullanici Gelecegin Bizde Onem Tasir sayfasinda oldugunu dogrular")
     public void gcKullaniciGeleceginBizdeOnemTasirSayfasindaOldugunuDogrular() {
         assert Driver.getDriver().getCurrentUrl().contains("gelecegin-bizde-onem-tasir");
-        // assert us10.geleceginBizdeOnemTasirTitleText.isDisplayed();
     }
     @Given("GC Kullanici Aras Kargo Is Basvurulari basligini goruntuler")
     public void gcKullaniciArasKargoIsBasvurulariBasliginiGoruntuler() {

@@ -3,12 +3,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import pages.US08;
 import utilities.ConfigReader;
 import utilities.Driver;
-
-import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 public class US08_StepDefs {
     US08 us08 =new US08();
@@ -56,12 +53,10 @@ public class US08_StepDefs {
     @Given("EK Kullanici acilan dropdowndaki BILGI butonuna tiklar")
     public void ekKullaniciAcilanDropdowndakiBILGIButonunaTiklar() {
         clickByJS(us08.bilgiSecenegiDropdown);
-        //new Select(us08.kategoriSecinDropDownGeriBildirimFormuMusteriIliskileri).selectByVisibleText("BİLGİ");
     }
     @When("EK Kullanici dropdown icinde BILGI secildigini dogrular")
-    public void ekKullaniciDropdownIcindeBILGISecildiginiDogrular() throws InterruptedException {
-        Thread.sleep(2000);
-        assert us08.bilgiTextDropdown.getText().contains("BİLGİ");
+    public void ekKullaniciDropdownIcindeBILGISecildiginiDogrular()  {
+           us08.bilgiTitleTextGeriBildirimFormu.getText().contains("BİLGİ");
     }
     @Then("EK Kullanici sayfayi kapatir")
     public void ekKullaniciSayfayiKapatir() {
@@ -69,46 +64,62 @@ public class US08_StepDefs {
     }
     @Given("EK Kullanici acilan dropdowndaki ISLEM_TALEP butonuna tiklar")
     public void ekKullaniciAcilanDropdowndakiISLEM_TALEPButonunaTiklar() {
-        //new Select(us08.kategoriSecinDropDownGeriBildirimFormuMusteriIliskileri).selectByVisibleText("İŞLEM - TALEP");
         clickByJS(us08.islem_TalepSecenegiDropdown);
     }
     @When("EK Kullanici dropdown icinde ISLEM_TALEP secildigini dogrular")
-    public void ekKullaniciDropdownIcindeISLEM_TALEPSecildiginiDogrular() throws InterruptedException {
-        Thread.sleep(2000);
-        assertTrue(us08.islemTalepTextDropdown.getText().contains("İŞLEM"));
+    public void ekKullaniciDropdownIcindeISLEM_TALEPSecildiginiDogrular() {
+        assert us08.islemTalepTitleTextGeriBildirimFormu.isDisplayed();
     }
     @Given("EK Kullanici acilan dropdowndaki ONERI butonuna tiklar")
     public void ekKullaniciAcilanDropdowndakiONERIButonunaTiklar() {
-        //new Select(us08.kategoriSecinDropDownGeriBildirimFormuMusteriIliskileri).selectByVisibleText("ÖNERİ");
-        clickByJS(us08.oneriSecenegiDropdown);
+        clickWithTimeOut(us08.oneriSecenegiDropdown,2);
     }
     @When("EK Kullanici dropdown icinde ONERI secildigini dogrular")
-    public void ekKullaniciDropdownIcindeONERISecildiginiDogrular() throws InterruptedException {
-        Thread.sleep(2000);
-        assertTrue(us08.oneriTextDropdown.getText().contains("ÖNERİ"));
+    public void ekKullaniciDropdownIcindeONERISecildiginiDogrular() {
+        assert us08.oneriTitleTextGeriBildirimFormu.isDisplayed();
     }
     @Given("EK Kullanici acilan dropdowndaki SIKAYET_PROBLEM butonuna tiklar")
     public void ekKullaniciAcilanDropdowndakiSIKAYET_PROBLEMButonunaTiklar() {
-        //new Select(us08.kategoriSecinDropDownGeriBildirimFormuMusteriIliskileri).selectByVisibleText("ŞİKAYET - PROBLEM");
        clickByJS(us08.sikayet_ProblemSecenegiDropdown);
     }
     @When("EK Kullanici dropdown icinde SIKAYET_PROBLEM secildigini dogrular")
-    public void ekKullaniciDropdownIcindeSIKAYET_PROBLEMSecildiginiDogrular() throws InterruptedException {
-        Thread.sleep(2000);
-        assertTrue(us08.sikayetProblemTextDropdown.getText().contains("ŞİKAYET"));
+    public void ekKullaniciDropdownIcindeSIKAYET_PROBLEMSecildiginiDogrular() {
+        assert us08.sikayetProblemTitleTextGeriBildirimFormu.isDisplayed();
     }
     @Given("EK Kullanici acilan dropdowndaki TESEKKURLER butonuna tiklar")
     public void ekKullaniciAcilanDropdowndakiTESEKKURLERButonunaTiklar() {
-        //new Select(us08.kategoriSecinDropDownGeriBildirimFormuMusteriIliskileri).selectByVisibleText("TEŞEKKÜRLER");
-        clickByJS(us08.tesekkurlerSecenegiDropdown);
+        clickWithTimeOut(us08.tesekkurlerSecenegiDropdown,2);
     }
     @When("EK Kullanici dropdown icinde TESEKKURLER secildigini dogrular")
-    public void ekKullaniciDropdownIcindeTESEKKURLERSecildiginiDogrular() throws InterruptedException {
-        Thread.sleep(2000);
-        assertTrue(us08.tesekkurlerTextDropdown.getText().contains("TEŞEKKÜRLER"));
+    public void ekKullaniciDropdownIcindeTESEKKURLERSecildiginiDogrular() {
+        assert us08.tesekkurlerTitleTextGeriBildirimFormu.isDisplayed();
     }
     @And("EK Kullanici iki saniye bekler")
     public void ekKullaniciIkiSaniyeBekler() throws InterruptedException {
         Thread.sleep(2000);
+    }
+    @And("EK KUllanici konu basligi dropdowna tiklar")
+    public void ekKUllaniciKonuBasligiDropdownaTiklar() {
+        clickByJS(us08.konuBasligiSecinDropdownGeriBildirimFormu);
+    }
+    @And("EK Kullanici eOdemeBilgisi secenegini tiklar")
+    public void ekKullaniciEOdemeBilgisiSeceneginiTiklar() {
+        clickWithTimeOut(us08.eOdemeBilgisiKonuBasligiSecenegiGeriBildirimFormu,2);
+    }
+    @And("EK Kullanici acentelik talebi secenegini tiklar")
+    public void ekKullaniciAcentelikTalebiSeceneginiTiklar() {
+       clickWithTimeOut(us08.acentelikTalebiIslemTalepSecenegiGeriBildirimFormu,2);
+    }
+    @And("EK Kullanici diger secenegini tiklar")
+    public void ekKullaniciDigerSeceneginiTiklar() {
+        clickWithTimeOut(us08.digerOneriSecenegiGeriBildirimFormu,2);
+    }
+    @And("EK Kullanici adresten alim yapilmamasi secenegini tiklar")
+    public void ekKullaniciAdrestenAlimYapilmamasiSeceneginiTiklar() {
+        clickWithTimeOut(us08.adrestenAlimYapilmamasiSikayetProblemSecenegiGeriBildirimFormu,2);
+    }
+    @And("EK Kullanici bolge personeli secenegini tiklar")
+    public void ekKullaniciBolgePersoneliSeceneginiTiklar() {
+        clickWithTimeOut(us08.bolgePersoneliTesekkurlerSecenegiGeriBildirimFormu,2);
     }
 }

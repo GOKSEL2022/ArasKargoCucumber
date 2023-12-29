@@ -62,4 +62,38 @@ public class US08 {
 
     @FindBy(xpath = "//*[text()=' TEŞEKKÜRLER ']")
     public WebElement tesekkurlerTextDropdown;
+
+    @FindBy(xpath = "//*[@class='mat-select-placeholder mat-select-min-line ng-tns-c84697453-17 ng-star-inserted']")
+    public WebElement konuBasligiSecinDropdownGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[.=' E-ÖDEME BİLGİSİ '])[1]")
+    public WebElement eOdemeBilgisiKonuBasligiSecenegiGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[@aria-required='false'])[5]")
+    public WebElement bilgiTitleTextGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[.=' ACENTELİK TALEBİ '])[1]")
+    public WebElement acentelikTalebiIslemTalepSecenegiGeriBildirimFormu;
+
+    @FindBy(xpath = "//*[@class='mat-select-value-text ng-tns-c84697453-15 ng-star-inserted']")
+    public WebElement islemTalepTitleTextGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[.=' DİĞER '])[1]")
+    public WebElement digerOneriSecenegiGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[@autocomplete='off'])[5]")
+    public WebElement oneriTitleTextGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[.=' ADRESTEN ALIM YAPILMAMASI '])[1]")
+    public WebElement adrestenAlimYapilmamasiSikayetProblemSecenegiGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[@autocomplete='off'])[5]")
+    public WebElement sikayetProblemTitleTextGeriBildirimFormu;
+
+    @FindBy(xpath = "(//*[.=' BÖLGE PERSONELİ '])[1]")
+    public WebElement bolgePersoneliTesekkurlerSecenegiGeriBildirimFormu;
+
+    @FindBy(xpath = "//*[@class='mat-form-field-infix ng-tns-c2842056177-24']")
+    public WebElement tesekkurlerTitleTextGeriBildirimFormu;
+
 }
