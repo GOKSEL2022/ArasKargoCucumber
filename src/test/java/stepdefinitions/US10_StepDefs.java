@@ -22,7 +22,7 @@ public class US10_StepDefs {
     }
     @And("GC Kullanici Gelecegin Bizde Onem Tasir sayfasinda oldugunu dogrular")
     public void gcKullaniciGeleceginBizdeOnemTasirSayfasindaOldugunuDogrular() {
-        assert Driver.getDriver().getCurrentUrl().contains("gelecegin-bizde-onem-tasir");
+        assert us10.geleceginBizdeOnemTasirTitleText.isDisplayed();
     }
     @Given("GC Kullanici Aras Kargo Is Basvurulari basligini goruntuler")
     public void gcKullaniciArasKargoIsBasvurulariBasliginiGoruntuler() {
