@@ -33,13 +33,13 @@ public class US09 {
     @FindBy(xpath = "//div//p[contains(.,'menü numarasını')]")
     public WebElement ilgiliMenuNoText;
     @FindBy(xpath = "//*[@class='pisano-error']")
-    public WebElement hataMesaji;
+    public WebElement hataMesajiText;
     @FindBy(id = "pisano-text-input-23ec80dd-36f1-41c1-9483-1d0c8816ae54")
     public WebElement islemDevamTextBox;
     @FindBy(xpath = "//input[@type='text']")
     public WebElement textBox;
     @FindBy(xpath = "//p[contains(.,'teşekkür ')]")
-    public WebElement tesekkurMesaji;
+    public WebElement tesekkurMesajiText;
 
 
 }
