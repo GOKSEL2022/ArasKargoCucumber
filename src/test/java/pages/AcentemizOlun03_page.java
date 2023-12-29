@@ -7,9 +7,9 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class US03 {
+public class AcentemizOlun03_page {
 
-    public US03(){
+    public AcentemizOlun03_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

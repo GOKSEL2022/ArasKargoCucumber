@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US04 {
+public class UyeGirisi04_StepDef {
 
-    public US04() {
+    public UyeGirisi04_StepDef() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

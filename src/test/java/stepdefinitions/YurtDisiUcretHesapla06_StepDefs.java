@@ -3,7 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import pages.US06;
+import pages.YurtDisiUcretHesapla06_pages;
 import utilities.*;
 
 import java.util.*;
@@ -11,9 +11,9 @@ import java.util.*;
 import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 
-public class US06_stepDefs {
+public class YurtDisiUcretHesapla06_StepDefs {
 
-    US06 uS06page = new US06();
+    YurtDisiUcretHesapla06_pages uS06page = new YurtDisiUcretHesapla06_pages();
     Actions actions;
     int rndNumber, commaIndex, itemTotalPrice;
     List<WebElement> ulkelerListesi, priceList;

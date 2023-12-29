@@ -2,13 +2,10 @@ package stepdefinitions;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import pages.US03;
+import pages.AcentemizOlun03_page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -18,11 +15,11 @@ import java.util.List;
 import java.util.Random;
 
 
-public class US03_StepDefs {
+public class AcentemizOlun03_StepDef {
 
 
     Actions actions = new Actions(Driver.getDriver());
-    US03 pages = new US03();
+    AcentemizOlun03_page pages = new AcentemizOlun03_page();
 
    @Given("GL Web sitesine {string} gidilir")
    public void glWebSitesineGidilir(String url) {

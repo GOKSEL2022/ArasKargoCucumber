@@ -2,17 +2,16 @@ package stepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.*;
 import utilities.*;
-import pages.US09;
+import pages.ChatBot09_page;
 import java.util.Random;
 import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 
 
-public class US09_StepDefs {
+public class ChatBot09_StepDef {
 
-    US09 us09 = new US09();
+    ChatBot09_page chatBot09Page = new ChatBot09_page();
     Faker faker;
     Random rnd;
     String randomPhoneNo, mail, randomIslemNo;
@@ -26,22 +25,22 @@ public class US09_StepDefs {
 
     @And("AA Anasayfada Size Nasıl Yardimci olabilirim PopUpa tiklar")
     public void aaAnasayfadaSizeNasılYardimciOlabilirimPopUpaTiklar() {
-        us09.chatBot.click();
+        chatBot09Page.chatBot.click();
     }
 
     @When("AA Acilan pencereden Devam butonuna tiklar")
     public void aaAcilanPenceredenDevamButonunaTiklar() {
         switchToWindow(1);
         Driver.getDriver().manage().window().maximize();
-        us09.devamButton.click();
+        chatBot09Page.devamButton.click();
 
     }
 
     @And("AA Valid random ad soyad bilgilerini girer ve gonder butonuna tiklar")
     public void aaValidRandomAdSoyadBilgileriniGirerVeGonderButonunaTiklar() {
         faker = new Faker();
-        us09.adSoyadTextBox.sendKeys(faker.name().fullName());
-        us09.gonderButton.click();
+        chatBot09Page.adSoyadTextBox.sendKeys(faker.name().fullName());
+        chatBot09Page.gonderButton.click();
     }
 
     @And("AA Valid random telefon numarası girer ve gonder butonuna tiklar")
@@ -50,16 +49,16 @@ public class US09_StepDefs {
         randomPhoneNo = String.valueOf(268)
                 + (rnd.nextInt(999 - 100) + 100)
                 + (rnd.nextInt(9999 - 1000) + 1000);
-        us09.telNoTextBox.sendKeys(randomPhoneNo);
-        us09.gonderButton.click();
+        chatBot09Page.telNoTextBox.sendKeys(randomPhoneNo);
+        chatBot09Page.gonderButton.click();
 
     }
 
     @And("AA Random valid mail adresi bilgisini girer ve gonder butonuna tiklar")
     public void aaRandomValidMailAdresiBilgisiniGirerVeGonderButonunaTiklar() {
         mail = faker.internet().emailAddress();
-        us09.mailAdresiTextBox.sendKeys(mail);
-        us09.gonderButton.click();
+        chatBot09Page.mailAdresiTextBox.sendKeys(mail);
+        chatBot09Page.gonderButton.click();
 
     }
 
@@ -67,14 +66,14 @@ public class US09_StepDefs {
     public void aaKullaniciRandomIslemNumarasiGirer() {
 //        int randomNumber = rand.nextInt(10) + 1;  ->1 to 10
         rnd = new Random();
-        randomIslemNo = String.valueOf(rnd.nextInt(us09.islemMetniList.size()) + 1);
-        us09.islemNoTextBox.sendKeys(randomIslemNo);
-        us09.gonderButton.click();
+        randomIslemNo = String.valueOf(rnd.nextInt(chatBot09Page.islemMetniList.size()) + 1);
+        chatBot09Page.islemNoTextBox.sendKeys(randomIslemNo);
+        chatBot09Page.gonderButton.click();
     }
 
     @Then("AA Ilgili soruya yönlendirildigini dogrular")
     public void aaIlgiliSoruyaYönlendirildiginiDogrular() {
-        assertTrue("It is not the correct menu", us09.ilgiliMenuNoText.isDisplayed());
+        assertTrue("It is not the correct menu", chatBot09Page.ilgiliMenuNoText.isDisplayed());
     }
 
     @And("AA Sayfalari kapatir")
@@ -84,46 +83,46 @@ public class US09_StepDefs {
 
     @And("AA Kullanici {string} girer")
     public void aaKullaniciGirer(String invalidIsim) {
-        us09.adSoyadTextBox.sendKeys(invalidIsim);
-        us09.gonderButton.click();
+        chatBot09Page.adSoyadTextBox.sendKeys(invalidIsim);
+        chatBot09Page.gonderButton.click();
     }
 
     @Then("AA Uyarı mesajini dogrular")
     public void aaUyarıMesajiniDogrular() {
-        assertTrue("Error message is not displayed", us09.hataMesajiText.isDisplayed());
+        assertTrue("Error message is not displayed", chatBot09Page.hataMesajiText.isDisplayed());
         waitFor(2);
     }
 
 
     @And("AA Kullanici invalid {string} girer")
     public void aaKullaniciInvalidGirer(String invalidTelNo) {
-        us09.telNoTextBox.sendKeys(invalidTelNo);
-        us09.gonderButton.click();
+        chatBot09Page.telNoTextBox.sendKeys(invalidTelNo);
+        chatBot09Page.gonderButton.click();
     }
 
     @And("AA Kullanici {string} girer ve gonderir")
     public void aaKullaniciGirerVeGonderir(String invalidMail) {
-        us09.mailAdresiTextBox.sendKeys(invalidMail);
-        us09.gonderButton.click();
+        chatBot09Page.mailAdresiTextBox.sendKeys(invalidMail);
+        chatBot09Page.gonderButton.click();
 
     }
 
 
     @And("AA Isleme devam eder gonder tusuna basar")
     public void aaIslemeDevamEderGonderTusunaBasar() {
-        us09.islemDevamTextBox.sendKeys("1");
-        us09.gonderButton.click();
+        chatBot09Page.islemDevamTextBox.sendKeys("1");
+        chatBot09Page.gonderButton.click();
     }
 
     @And("AA Kullanici Cikis yazar ve gondere basar")
     public void aaKullaniciCikisYazarVeGondereBasar() {
-        us09.textBox.sendKeys("Çıkış");
-        us09.gonderButton.click();
+        chatBot09Page.textBox.sendKeys("Çıkış");
+        chatBot09Page.gonderButton.click();
     }
 
     @Then("AA Ilgili mesaji dogrular")
     public void aaIlgiliMesajiDogrular() {
-        assertTrue(us09.tesekkurMesajiText.getText().contains("teşekkür"));
+        assertTrue(chatBot09Page.tesekkurMesajiText.getText().contains("teşekkür"));
 
     }
 }

@@ -8,9 +8,9 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class US13 {
+public class Belgeler13_page {
 
-    public US13() {
+    public Belgeler13_page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

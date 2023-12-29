@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US12 {
-    public US12(){
+public class MusteriIliskileri12_page {
+    public MusteriIliskileri12_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "(//*[.='Müşteri İlişkileri'])[1]")

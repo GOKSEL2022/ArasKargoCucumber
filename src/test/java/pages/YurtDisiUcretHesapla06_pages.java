@@ -7,8 +7,8 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class US06 {
-    public US06() {
+public class YurtDisiUcretHesapla06_pages {
+    public YurtDisiUcretHesapla06_pages() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

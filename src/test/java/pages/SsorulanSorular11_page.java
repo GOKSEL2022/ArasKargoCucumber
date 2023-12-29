@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US11 {
-    public US11(){
+public class SsorulanSorular11_page {
+    public SsorulanSorular11_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

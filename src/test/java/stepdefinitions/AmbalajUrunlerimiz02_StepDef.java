@@ -4,12 +4,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
-import pages.US02;
+import pages.AmbalajUrunlerimiz02_page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import static utilities.ReusableMethods.*;
-public class US02_StepDefs {
-    US02 us02 =new US02();
+public class AmbalajUrunlerimiz02_StepDef {
+    AmbalajUrunlerimiz02_page ambalajUrunlerimiz02Page =new AmbalajUrunlerimiz02_page();
     Actions actions=new Actions(Driver.getDriver());
     @Given("GC Kullanici {string}  url ye gelir")
     public void kullanici_url_ye_gelir(String string) {
@@ -21,17 +21,17 @@ public class US02_StepDefs {
     }
     @When("GC Kullanici Hizmetlerinmiz basligina gelir")
     public void kullanici_hizmetlerinmiz_basligina_gelir()  {
-        clickWithTimeOut(us02.popupCloseHome,3);
-        actions.moveToElement(us02.hizmetlerimizLinkHome).perform();
+        clickWithTimeOut(ambalajUrunlerimiz02Page.popupCloseHome,3);
+        actions.moveToElement(ambalajUrunlerimiz02Page.hizmetlerimizLinkHome).perform();
     }
     @When("GC Kullanici Ambalaj Urunlerimiz secenegine tiklar")
     public void kullanici_ambalaj_urunlerimiz_secenegine_tiklar() {
-        clickWithTimeOut(us02.ambalajUrunlerimizHizmetlerimizLinkHome,3);
+        clickWithTimeOut(ambalajUrunlerimiz02Page.ambalajUrunlerimizHizmetlerimizLinkHome,3);
     }
     @When("GC Kullanici Ambalaj Urunlerimiz sayfasinda oldugunu dogrular")
     public void kullanici_ambalaj_urunlerimiz_sayfasinda_oldugunu_dogrular() throws InterruptedException {
         Thread.sleep(2000);
-        assert us02.ambalajUrunlerimizTextTitle.isDisplayed();
+        assert ambalajUrunlerimiz02Page.ambalajUrunlerimizTextTitle.isDisplayed();
     }
     @Then("GC Kullanici sayfayi kapatir")
     public void kullanici_sayfayi_kapatir() {
@@ -39,16 +39,16 @@ public class US02_StepDefs {
     }
     @Given("GC Kullanici Kutu_Koli basligini goruntuler")
     public void gcKullaniciKutu_KoliBasliginiGoruntuler() {
-        assert us02.kutuKoliButonAmbalajUrunleri.isDisplayed();
+        assert ambalajUrunlerimiz02Page.kutuKoliButonAmbalajUrunleri.isDisplayed();
     }
     @When("GC Kullanici Kutu_Koli basliginin seceneklerini goruntuler")
     public void gcKullaniciKutu_KoliBasligininSecenekleriniGoruntuler() {
-        scrollIntoViewJS(us02.kutuKoliSecenekleriAmbalajUrunleri);
-        assert us02.kutuKoliSecenekleriAmbalajUrunleri.isDisplayed();
+        scrollIntoViewJS(ambalajUrunlerimiz02Page.kutuKoliSecenekleriAmbalajUrunleri);
+        assert ambalajUrunlerimiz02Page.kutuKoliSecenekleriAmbalajUrunleri.isDisplayed();
     }
     @And("GC Kullanici Ambalaj fiyatlari alanina tiklar")
     public void gcKullaniciAmbalajFiyatlariAlaninaTiklar() {
-        clickByJS(us02.ambalajFiyatlariButonAmbalajUrunleri);
+        clickByJS(ambalajUrunlerimiz02Page.ambalajFiyatlariButonAmbalajUrunleri);
     }
     @And("GC Kullanici Aras Kargo Hizmetler Fiyat Listesini goruntuler")
     public void gcKullaniciArasKargoHizmetlerFiyatListesiniGoruntuler() throws InterruptedException {
@@ -79,10 +79,10 @@ public class US02_StepDefs {
     }
     @Given("GC Kullanici Dosya_Evrak basligina tiklar")
     public void gcKullaniciDosya_EvrakBasliginaTiklar() {
-        clickWithTimeOut(us02.dosyaEvrakButonAmbalajUrunleri,2);
+        clickWithTimeOut(ambalajUrunlerimiz02Page.dosyaEvrakButonAmbalajUrunleri,2);
     }
     @When("GC Kullanici Dosya_Evrak basliginin seceneklerini goruntuler")
     public void gcKullaniciDosya_EvrakBasligininSecenekleriniGoruntuler() {
-        assert us02.dosyaEvrakSecenekleriAmbalajUrunleri.isDisplayed();
+        assert ambalajUrunlerimiz02Page.dosyaEvrakSecenekleriAmbalajUrunleri.isDisplayed();
     }
 }

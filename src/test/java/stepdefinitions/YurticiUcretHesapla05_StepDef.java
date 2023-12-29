@@ -7,17 +7,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import pages.US05;
+import pages.YurticiUcretHesapla05_page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import static utilities.ReusableMethods.hover;
 import static utilities.ReusableMethods.waitFor;
 
-public class US05_StepDefs {
+public class YurticiUcretHesapla05_StepDef {
 
-    US05 us05 = new US05();
+    YurticiUcretHesapla05_page yurticiUcretHesapla05Page = new YurticiUcretHesapla05_page();
     Actions actions=new Actions(Driver.getDriver());
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     SearchContext shadowRootElement;
@@ -33,7 +32,7 @@ public class US05_StepDefs {
     public void acilan_sayfada_gelen_bilgilendirme_ekrani_kapatilir() {
 
         try {
-            us05.popupCloseSG.click();
+            yurticiUcretHesapla05Page.popupCloseSG.click();
         } catch (Exception e) {
         }
 
@@ -54,10 +53,10 @@ public class US05_StepDefs {
     @And("Sayfayi asagi kaydirarak Ucret Hesapla pop-up'inin goruldugu dogrulanir ve tiklanir.")
     public void sayfayiAsagiKaydirarakUcretHesaplaPopUpIninGorulduguDogrulanirVeTiklanir() {
 
-        ReusableMethods.scrollIntoViewJS(us05.adresiDegistirSG);
+        ReusableMethods.scrollIntoViewJS(yurticiUcretHesapla05Page.adresiDegistirSG);
         waitFor(1);
-        Assert.assertTrue(us05.ucretHesaplaSG.isDisplayed());
-        ReusableMethods.clickWithTimeOut(us05.ucretHesaplaSG,2);
+        Assert.assertTrue(yurticiUcretHesapla05Page.ucretHesaplaSG.isDisplayed());
+        ReusableMethods.clickWithTimeOut(yurticiUcretHesapla05Page.ucretHesaplaSG,2);
 
 
     }
@@ -65,14 +64,14 @@ public class US05_StepDefs {
 
     @Then("Yurt ici pop-upinin acildigi dogrulanir.")
     public void yurtIciPopUpininAcildigiDogrulanir() {
-        Assert.assertTrue(us05.yurticiPopupSG.isDisplayed());
+        Assert.assertTrue(yurticiUcretHesapla05Page.yurticiPopupSG.isDisplayed());
     }
 
 
     @Then("Acilan pop-up'ta Yurt ici fiyatlarina ulasmak icin tiklayiniz butonunun goruldugu dogrulanir ve tiklanir.")
     public void acilanPopUpTaYurtIciFiyatlarinaUlasmakIcinTiklayinizButonununGorulduguDogrulanirVeTiklanir() {
-        Assert.assertTrue(us05.yurticiFiyatListesiSG.isDisplayed());
-        us05.yurticiFiyatListesiSG.click();
+        Assert.assertTrue(yurticiUcretHesapla05Page.yurticiFiyatListesiSG.isDisplayed());
+        yurticiUcretHesapla05Page.yurticiFiyatListesiSG.click();
     }
 
 
@@ -80,8 +79,8 @@ public class US05_StepDefs {
     public void standartFiyatListesiButonununGorulduguDogrulanirVeTiklanir() {
 
         ReusableMethods.switchToWindow(1);
-        Assert.assertTrue(us05.standartFiyatListesiSG.isDisplayed());
-        us05.standartFiyatListesiSG.click();
+        Assert.assertTrue(yurticiUcretHesapla05Page.standartFiyatListesiSG.isDisplayed());
+        yurticiUcretHesapla05Page.standartFiyatListesiSG.click();
 
     }
 

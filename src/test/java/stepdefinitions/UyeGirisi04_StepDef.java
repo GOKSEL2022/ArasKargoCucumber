@@ -3,10 +3,8 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
-import pages.US04;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -14,9 +12,9 @@ import utilities.ReusableMethods;
 import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 
-public class US04_StepDefs {
+public class UyeGirisi04_StepDef {
 
-    US04 pages = new US04();
+    pages.UyeGirisi04_StepDef pages = new pages.UyeGirisi04_StepDef();
 
     SearchContext shadowRootElement;
     WebElement hiddenElement;
