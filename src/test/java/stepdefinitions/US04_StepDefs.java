@@ -12,8 +12,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
-import static utilities.ReusableMethods.switchToWindow;
-import static utilities.ReusableMethods.waitFor;
+import static utilities.ReusableMethods.*;
 
 public class US04_StepDefs {
 
@@ -26,23 +25,10 @@ public class US04_StepDefs {
     @Given("SO Aras kargo web sitesine gidilir")
     public void so_aras_kargo_web_sitesine_gidilir() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("aras_url"));
-        try {
-            pages.popUpClose.click();
-        }catch (Exception e){}
+        navigateToUrl();
+        closePopUp();
+        closeCookies();
 
-        waitFor(1);
-
-        try {
-            shadowRootElement =
-                    Driver.getDriver().findElement(By.cssSelector(".efilli-layout-default")).getShadowRoot();
-            hiddenElement =
-                    shadowRootElement.findElement(By.cssSelector(".banner__accept-button"));
-//            shadowRootElement.findElement(By.cssSelector("banner__reject-button"));
-            hiddenElement.click();
-        } catch (Exception ignored) {
-        }
-        //expectedUrl = Driver.getDriver().getCurrentUrl();
     }
     @When("Uye Girisi butonu tiklanir")
     public void uye_girisi_butonu_tiklanir() {
