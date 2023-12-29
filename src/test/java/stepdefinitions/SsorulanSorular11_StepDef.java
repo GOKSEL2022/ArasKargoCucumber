@@ -6,16 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import pages.US11;
+import pages.SsorulanSorular11_page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static utilities.ReusableMethods.waitFor;
-public class US11_StepDefs {
+public class SsorulanSorular11_StepDef {
 
 
-    US11 us11 = new US11();
+    SsorulanSorular11_page ssorulanSorular11Page = new SsorulanSorular11_page();
     Actions actions = new Actions(Driver.getDriver());
     SearchContext shadowRootElement;
     WebElement hiddenElement;
@@ -31,7 +31,7 @@ public class US11_StepDefs {
     public void sg_acilan_sayfada_gelen_bilgilendirme_ekrani_kapatilir() {
 
         try {
-            us11.popupCloseeSG.click();
+            ssorulanSorular11Page.popupCloseeSG.click();
         } catch (Exception e) {
         }
 
@@ -51,8 +51,8 @@ public class US11_StepDefs {
 
     @Then("SG Is Ortagimiz Olun butonunun goruldugu dogrulanir ve tiklanir")
     public void sg_is_ortagimiz_olun_butonunun_goruldugu_dogrulanir_ve_tiklanir() {
-        Assert.assertTrue(us11.isOrtagimizOlunSG.isDisplayed());
-        us11.isOrtagimizOlunSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.isOrtagimizOlunSG.isDisplayed());
+        ssorulanSorular11Page.isOrtagimizOlunSG.click();
         waitFor(2);
 
     }
@@ -60,8 +60,8 @@ public class US11_StepDefs {
 
     @Then("SG Acilan sayfada Sik Sorulan Sorular basliginin goruldugu dogrulanir")
     public void sg_acilan_sayfada_sik_sorulan_sorular_basliginin_goruldugu_dogrulanir() {
-        Assert.assertTrue(us11.sikSorulanSorularSG.isDisplayed());
-        ReusableMethods.scrollIntoViewJS(us11.acentemizOlunIlkSoruSG);
+        Assert.assertTrue(ssorulanSorular11Page.sikSorulanSorularSG.isDisplayed());
+        ReusableMethods.scrollIntoViewJS(ssorulanSorular11Page.acentemizOlunIlkSoruSG);
 
     }
 
@@ -79,16 +79,16 @@ public class US11_StepDefs {
     @Then("SG Ilk sorunun ve cevabinin goruldugu Dogrulanir.")
     public void sg_ilk_sorunun_ve_cevabinin_goruldugu_dogrulanir() {
         //Assert.assertTrue(us11.acentemizOlunIlkSoruSG.isDisplayed());
-        ReusableMethods.clickWithTimeOut(us11.acentemizOlunIlkSoruSG, 1);
-        Assert.assertTrue(us11.acentemizOlunIlkCevapSG.isDisplayed());
+        ReusableMethods.clickWithTimeOut(ssorulanSorular11Page.acentemizOlunIlkSoruSG, 1);
+        Assert.assertTrue(ssorulanSorular11Page.acentemizOlunIlkCevapSG.isDisplayed());
     }
     @Then("SG Ikinci sorunun ve cevabinin goruldugu dogrulanirr.")
     public void sg_ikinci_sorunun_ve_cevabinin_goruldugu_dogrulanirr() {
 
         waitFor(1);
-        ReusableMethods.scrollIntoViewJS(us11.acentemizOlunButtonSG);
-        us11.acentemizOlunIkinciSoruSG.click();
-        Assert.assertTrue(us11.acentemizOlunIkinciCevapSG.isDisplayed());
+        ReusableMethods.scrollIntoViewJS(ssorulanSorular11Page.acentemizOlunButtonSG);
+        ssorulanSorular11Page.acentemizOlunIkinciSoruSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.acentemizOlunIkinciCevapSG.isDisplayed());
 
     }
 
@@ -97,9 +97,9 @@ public class US11_StepDefs {
     @Then("ARAS BURASI NOKTASI OLUN Basliginin gorulldugu dogrulanir.")
     public void arasBURASINOKTASIOLUNBasligininGorullduguDogrulanir() {
 
-        ReusableMethods.scrollIntoViewJS(us11.arasBurasiNoktasiOlunButtonSG);
-        Assert.assertTrue(us11.arasBurasiNoktasiOlunButtonSG.isDisplayed());
-        us11.arasBurasiNoktasiOlunButtonSG.click();
+        ReusableMethods.scrollIntoViewJS(ssorulanSorular11Page.arasBurasiNoktasiOlunButtonSG);
+        Assert.assertTrue(ssorulanSorular11Page.arasBurasiNoktasiOlunButtonSG.isDisplayed());
+        ssorulanSorular11Page.arasBurasiNoktasiOlunButtonSG.click();
 
     }
 
@@ -107,21 +107,21 @@ public class US11_StepDefs {
     @Then("Ilk sorunun ve cevabinin gorulldugu Dogrulanir.")
     public void ılkSorununVeCevabininGorullduguDogrulanir() {
 
-        ReusableMethods.scrollIntoViewJS(us11.arasBurasiNoktasiOlunButtonSG);
+        ReusableMethods.scrollIntoViewJS(ssorulanSorular11Page.arasBurasiNoktasiOlunButtonSG);
 
-        Assert.assertTrue(us11.arasBurasiNoktasiOlunButtonSG.isDisplayed());
-        us11.arasBurasiNoktasiOlunIlkSoruSG.click();
-        Assert.assertTrue(us11.arasBurasiNoktasiOlunIlkCevapSG.isDisplayed());
+        Assert.assertTrue(ssorulanSorular11Page.arasBurasiNoktasiOlunButtonSG.isDisplayed());
+        ssorulanSorular11Page.arasBurasiNoktasiOlunIlkSoruSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.arasBurasiNoktasiOlunIlkCevapSG.isDisplayed());
         waitFor(2);
     }
 
     @And("Ikinci sorunun ve cevabinin gorulldugu dogrulanirr.")
     public void ıkinciSorununVeCevabininGorullduguDogrulanirr() {
 
-        ReusableMethods.scrollIntoViewJS(us11.arasBurasiNoktasiOlunButtonSG);
+        ReusableMethods.scrollIntoViewJS(ssorulanSorular11Page.arasBurasiNoktasiOlunButtonSG);
 
-        us11.arasBurasiNoktasiOlunIkinciSoruSG.click();
-        Assert.assertTrue(us11.arasBurasiNoktasiOlunIkinciCevapSG.isDisplayed());
+        ssorulanSorular11Page.arasBurasiNoktasiOlunIkinciSoruSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.arasBurasiNoktasiOlunIkinciCevapSG.isDisplayed());
 
     }
 
@@ -129,24 +129,24 @@ public class US11_StepDefs {
     @Then("SG ESNAF KURYE OLUN basliginin gorulldugu dogrulanir")
     public void sg_esnaf_kurye_olun_basliginin_gorulldugu_dogrulanir() {
 
-        ReusableMethods.scrollIntoViewJS(us11.esnafKuryeOlunOlunButtonSG);
+        ReusableMethods.scrollIntoViewJS(ssorulanSorular11Page.esnafKuryeOlunOlunButtonSG);
 
-        Assert.assertTrue(us11.esnafKuryeOlunOlunButtonSG.isDisplayed());
+        Assert.assertTrue(ssorulanSorular11Page.esnafKuryeOlunOlunButtonSG.isDisplayed());
 
     }
     @Then("SG Ilk sorunun ve cevabinin gorulldugu dogrulanir")
     public void sg_ilk_sorunun_ve_cevabinin_gorulldugu_dogrulanir() {
         waitFor(3);
-        us11.esnafKuryeOlunOlunIlkSoruSG.click();
-        Assert.assertTrue(us11.esnafKuryeOlunOlunIlkCevapSG.isDisplayed());
+        ssorulanSorular11Page.esnafKuryeOlunOlunIlkSoruSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.esnafKuryeOlunOlunIlkCevapSG.isDisplayed());
 
     }
     @Then("SG Ikinci sorunun ve cevabinin gorulldugu dogrulanir")
     public void sg_ikinci_sorunun_ve_cevabinin_gorulldugu_dogrulanir() {
 
 
-        us11.esnafKuryeOlunOlunIkinciSoruSG.click();
-        Assert.assertTrue(us11.esnafKuryeOlunOlunIkinciCevapSG.isDisplayed());
+        ssorulanSorular11Page.esnafKuryeOlunOlunIkinciSoruSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.esnafKuryeOlunOlunIkinciCevapSG.isDisplayed());
 
     }
 
@@ -154,21 +154,21 @@ public class US11_StepDefs {
 
     @Then("SG ARACINIZI KIRALAYIN basliginiin goruldugu dogrulanir.")
     public void sg_aracinizi_kiralayin_basliginiin_goruldugu_dogrulanir() {
-        Assert.assertTrue(us11.araciniziKiralayinButtonSG.isDisplayed());
+        Assert.assertTrue(ssorulanSorular11Page.araciniziKiralayinButtonSG.isDisplayed());
     }
     @Then("SG Ilk sorunun ve cevabinin goruuldugu dogrulanir.")
     public void sg_ilk_sorunun_ve_cevabinin_goruuldugu_dogrulanir() {
 
         waitFor(3);
-        us11.araciniziKiralayinIlkSoruSG.click();
-        Assert.assertTrue(us11.araciniziKiralayinIlkCevapSG.isDisplayed());
+        ssorulanSorular11Page.araciniziKiralayinIlkSoruSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.araciniziKiralayinIlkCevapSG.isDisplayed());
 
     }
     @Then("SG Ikinci sorunun ve cevabinin goruuldugu dogrulanir.")
     public void sg_ikinci_sorunun_ve_cevabinin_goruuldugu_dogrulanir() {
 
-        us11.araciniziKiralayinIkinciSoruSG.click();
-        Assert.assertTrue(us11.araciniziKiralayinIkinciCevapSG.isDisplayed());
+        ssorulanSorular11Page.araciniziKiralayinIkinciSoruSG.click();
+        Assert.assertTrue(ssorulanSorular11Page.araciniziKiralayinIkinciCevapSG.isDisplayed());
 
 
     }

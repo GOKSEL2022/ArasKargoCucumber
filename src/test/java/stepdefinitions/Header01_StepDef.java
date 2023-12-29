@@ -6,21 +6,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
-import pages.US01;
+import pages.Header01_page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
 
-public class US01_StepDefs {
-    US01 us01 = new US01();
+public class Header01_StepDef {
+    Header01_page header01Page = new Header01_page();
     Actions actions = new Actions(Driver.getDriver());
     @Given("MS Kullanici ana sayfaya  gider")
     public void kullaniciAnaSayfayaGider() {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         ReusableMethods.waitFor(1);
-        ReusableMethods.clickWithTimeOut(us01.popupCloseHome, 1);
+        ReusableMethods.clickWithTimeOut(header01Page.popupCloseHome, 1);
     }
     @When("MS Ana sayfayi dogrular")
     public void msanaSayfayiDogrular() {
@@ -28,32 +28,32 @@ public class US01_StepDefs {
     }
     @And("MS Hakkimizda butonuna tiklar")
     public void mshakkimizdaButonunaTiklar() {
-        ReusableMethods.clickByJS(us01.hakkimizdaButon);
+        ReusableMethods.clickByJS(header01Page.hakkimizdaButon);
     }
     @When("MS Hizmetlerimiz butonuna tiklar")
     public void hizmetlerimiz_butonuna_tiklar() {
-        ReusableMethods.clickByJS(us01.hizmetlerimizButon);
+        ReusableMethods.clickByJS(header01Page.hizmetlerimizButon);
     }
     @And("MS Hakkimizda sayfanin acildigini dogrular")
     public void msHakkimizdaSayfaninAcildiginiDogrular() {
-        Assert.assertTrue(us01.hakkimizdaButon.isDisplayed());
+        Assert.assertTrue(header01Page.hakkimizdaButon.isDisplayed());
     }
     @And("MS Hizmetlerimiz sayfanin acildigini dogrular")
     public void msHizmetlerimizSayfaninAcildiginiDogrular() {
-        Assert.assertTrue(us01.hizmetlerimizText.isDisplayed());
+        Assert.assertTrue(header01Page.hizmetlerimizText.isDisplayed());
     }
     @And("MS Kariyer butonuna tiklar")
     public void msKariyerButonunaTiklar() {
-        actions.moveToElement(us01.kariyerButon).perform();
-        us01.kariyerButon.click();
+        actions.moveToElement(header01Page.kariyerButon).perform();
+        header01Page.kariyerButon.click();
     }
     @And("MS Kariyer sayfanin acildigini dogrular")
     public void msKariyerSayfaninAcildiginiDogrular() {
-        Assert.assertTrue(us01.kariyerText.isDisplayed());
+        Assert.assertTrue(header01Page.kariyerText.isDisplayed());
     }
     @And("MS isOrtagimizOlun butonuna tiklar")
     public void msIsOrtagimizOlunButonunaTiklar() {
-        ReusableMethods.clickByJS(us01.isOrtagimizOlunButon);
+        ReusableMethods.clickByJS(header01Page.isOrtagimizOlunButon);
     }
     @And("MS isOrtagimizOlun sayfanin acildigini dogrular")
     public void msIsOrtagimizOlunSayfaninAcildiginiDogrular() {
@@ -61,7 +61,7 @@ public class US01_StepDefs {
     }
     @And("MS Musteriliskileri butonuna tiklar")
     public void msMusteriliskileriButonunaTiklar() {
-        ReusableMethods.clickByJS(us01.musteriIliskileriButon);
+        ReusableMethods.clickByJS(header01Page.musteriIliskileriButon);
     }
 
     @And("MS Musteriliskileri sayfanin acildigini dogrular")
@@ -71,7 +71,7 @@ public class US01_StepDefs {
 
     @And("MS ArasKargoSporKulubu butonuna tiklar")
     public void msArasKargoSporKulubuButonunaTiklar() {
-        ReusableMethods.clickByJS(us01.arasKargaSporKulbuButon);
+        ReusableMethods.clickByJS(header01Page.arasKargaSporKulbuButon);
     }
     @And("MS ArasKargoSporKulubu sayfanin acildigini dogrular")
     public void msArasKargoSporKulubuSayfaninAcildiginiDogrular() {
@@ -83,15 +83,15 @@ public class US01_StepDefs {
     }
     @And("MS BizeUlasin butonuna tiklar")
     public void msBizeUlasinButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.bizeUlasinButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.bizeUlasinButon,2);
     }
     @And("MS Hakkimizda butonunun ustune gelir")
     public void msHakkimizdaButonununUstuneGelir() {
-        actions.moveToElement(us01.hakkimizdaButon).perform();
+        actions.moveToElement(header01Page.hakkimizdaButon).perform();
     }
     @And("MS Acilan Drapdawn menude Vizyon Misyon Politikalar butonuna tiklar")
     public void msAcilanDrapdawnMenudeVizyonMisyonPolitikalarButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.vizyonMisyonPolitikalarDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.vizyonMisyonPolitikalarDrapdownButon,2);
     }
     @And("MS VizyonMisyonPolitikalar sayfanin acildigini dogrular")
     public void msVizyonMisyonPolitikalarSayfaninAcildiginiDogrular() {
@@ -99,7 +99,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude YonetimEkibimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeYonetimEkibimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.yonetimEkibimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.yonetimEkibimizDrapdownButon,2);
     }
     @And("MS YonetimEkibimiz sayfanin acildigini dogrular")
     public void msYonetimEkibimizSayfaninAcildiginiDogrular() {
@@ -107,7 +107,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude HaberDuyurular butonuna tiklar")
     public void msAcilanDrapdawnMenudeHaberDuyurularButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.haberDuyurularDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.haberDuyurularDrapdownButon,2);
     }
     @And("MS HaberDuyurular sayfanin acildigini dogrular")
     public void msHaberDuyurularSayfaninAcildiginiDogrular() {
@@ -115,7 +115,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Reklamlarimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeReklamlarimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.reklamlarimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.reklamlarimizDrapdownButon,2);
     }
     @And("MS Reklamlarimiz sayfanin acildigini dogrular")
     public void msReklamlarimizSayfaninAcildiginiDogrular() {
@@ -131,11 +131,11 @@ public class US01_StepDefs {
     }
     @And("MS Hizmetlerimiz butonunun ustune gelir")
     public void msHizmetlerimizButonununUstuneGelir() {
-        actions.moveToElement(us01.hizmetlerimizButon).perform();
+        actions.moveToElement(header01Page.hizmetlerimizButon).perform();
     }
     @And("MS Acilan Drapdawn menude Bireysel Hizmetlerimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeBireyselHizmetlerimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.bireyselHizmetlerimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.bireyselHizmetlerimizDrapdownButon,2);
     }
     @And("MS Bireysel Hizmetlerimiz sayfasinin acildigini dogrular")
     public void msBireyselHizmetlerimizSayfasininAcildiginiDogrular() {
@@ -143,7 +143,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Kurumsal Hizmetlerimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeKurumsalHizmetlerimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.kurumsalHizmetlerimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.kurumsalHizmetlerimizDrapdownButon,2);
     }
     @And("MS Kurumsal Hizmetlerimiz sayfasinin acildigini dogrular")
     public void msKurumsalHizmetlerimizSayfasininAcildiginiDogrular() {
@@ -151,7 +151,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Ambalaj Urunlerimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeAmbalajUrunlerimizButonunaTiklar() {
-        us01.ambalajUrunlerimizDrapdownButon.click();
+        header01Page.ambalajUrunlerimizDrapdownButon.click();
     }
     @And("MS Ambalaj Urunlerimiz sayfasinin acildigini dogrular")
     public void msAmbalajUrunlerimizSayfasininAcildiginiDogrular() {
@@ -159,11 +159,11 @@ public class US01_StepDefs {
     }
     @And("MS Kariyer butonunun ustune gelir")
     public void msKariyerButonununUstuneGelir() {
-        actions.moveToElement(us01.kariyerButon).perform();
+        actions.moveToElement(header01Page.kariyerButon).perform();
     }
     @And("MS Acilan Drapdawn menude  Araslar Bizde Önem Tasir butonuna tiklar")
     public void msAcilanDrapdawnMenudeAraslarBizdeÖnemTasirButonunaTiklar() {
-        ReusableMethods.clickByJS(us01.araslarBizdeOnemTasirDrapdownButon);
+        ReusableMethods.clickByJS(header01Page.araslarBizdeOnemTasirDrapdownButon);
     }
     @And("MS Araslar Bizde Önem Tasir sayfasinin acildigini dogrular")
     public void msAraslarBizdeÖnemTasirSayfasininAcildiginiDogrular() {
@@ -171,7 +171,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Gelecegin Bizde Onem Tasir butonuna tiklar")
     public void msAcilanDrapdawnMenudeGeleceginBizdeOnemTasirButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.geleceginBizdeOnemTasirDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.geleceginBizdeOnemTasirDrapdownButon,2);
     }
     @And("MS Gelecegin Bizde Onem Tasir sayfasinin acildigini dogrular")
     public void msGeleceginBizdeOnemTasirSayfasininAcildiginiDogrular() {
@@ -179,7 +179,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Iyi Bir Dunya Bizde Onem Tasir butonuna tiklar")
     public void msAcilanDrapdawnMenudeIyiBirDunyaBizdeOnemTasirButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.iyiBirDunyaBizdeOnemTasirDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.iyiBirDunyaBizdeOnemTasirDrapdownButon,2);
     }
     @And("MS Iyi Bir Dunya Bizde Onem Tasir sayfasinin acildigini dogrular")
     public void msIyiBirDunyaBizdeOnemTasirSayfasininAcildiginiDogrular() {
@@ -187,7 +187,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Teknoloji Bizde Onem Tasir butonuna tiklar")
     public void msAcilanDrapdawnMenudeTeknolojiBizdeOnemTasirButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.teknolojiBizdeOnemTasirDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.teknolojiBizdeOnemTasirDrapdownButon,2);
     }
     @And("MS Teknoloji Bizde Onem Tasir sayfasinin acildigini dogrular")
     public void msTeknolojiBizdeOnemTasirSayfasininAcildiginiDogrular() {
@@ -195,11 +195,11 @@ public class US01_StepDefs {
     }
     @And("MS Surdurulebilirlik butonunun ustune gelir")
     public void msSurdurulebilirlikButonununUstuneGelir() {
-        actions.moveToElement(us01.surdurebilirlikButon).perform();
+        actions.moveToElement(header01Page.surdurebilirlikButon).perform();
     }
     @And("MS Acilan Drapdawn menude Surdurulebilirlik Rotasi butonuna tiklar")
     public void msAcilanDrapdawnMenudeSurdurulebilirlikRotasiButonunaTiklar() {
-        ReusableMethods.clickByJS(us01.surdurulebilirlikRotasiDrapdownButon);
+        ReusableMethods.clickByJS(header01Page.surdurulebilirlikRotasiDrapdownButon);
     }
     @And("MS Surdurulebilirlik Rotasi sayfasinin acildigini dogrular")
     public void msSurdurulebilirlikRotasiSayfasininAcildiginiDogrular() {
@@ -207,7 +207,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Sosyal Sorumluluk Platformlarimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeSosyalSorumlulukPlatformlarimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.sosyalSorumlulukPlatformlarimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.sosyalSorumlulukPlatformlarimizDrapdownButon,2);
     }
     @And("MS Sosyal Sorumluluk Platformlarimiz sayfasinin acildigini dogrular")
     public void msSosyalSorumlulukPlatformlarimizSayfasininAcildiginiDogrular() {
@@ -215,7 +215,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Kalite Yönetim Sistemi butonuna tiklar")
     public void msAcilanDrapdawnMenudeKaliteYönetimSistemiButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.kaliteYonetimSistemiDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.kaliteYonetimSistemiDrapdownButon,2);
     }
     @And("MS Kalite Yönetim Sistemi sayfasinin acildigini dogrular")
     public void msKaliteYönetimSistemiSayfasininAcildiginiDogrular() {
@@ -223,11 +223,11 @@ public class US01_StepDefs {
     }
     @And("MS Is Ortagimiz Olun butonunun ustune gelir")
     public void msIsOrtagimizOlunButonununUstuneGelir() {
-        actions.moveToElement(us01.isOrtagimizOlunButon).perform();
+        actions.moveToElement(header01Page.isOrtagimizOlunButon).perform();
     }
     @And("MS Acilan Drapdawn menude Aras Burasi Noktasi Olun butonuna tiklar")
     public void msAcilanDrapdawnMenudeArasBurasiNoktasiOlunButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.arasBurasiNoktasiOlunDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.arasBurasiNoktasiOlunDrapdownButon,2);
     }
     @And("MS Aras Burasi Noktasi Olun sayfasinin acildigini dogrular")
     public void msArasBurasiNoktasiOlunSayfasininAcildiginiDogrular() {
@@ -235,7 +235,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Esnaf Kurye Olun butonuna tiklar")
     public void msAcilanDrapdawnMenudeEsnafKuryeOlunButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.esnafKuryeOlunDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.esnafKuryeOlunDrapdownButon,2);
     }
     @And("MS Esnaf Kurye Olun sayfasinin acildigini dogrular")
     public void msEsnafKuryeOlunSayfasininAcildiginiDogrular() {
@@ -243,7 +243,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Aracinizi Kiralayin butonuna tiklar")
     public void msAcilanDrapdawnMenudeAraciniziKiralayinButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.araciniziKiralayinDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.araciniziKiralayinDrapdownButon,2);
     }
     @And("MS Aracinizi Kiralayin sayfasinin acildigini dogrular")
     public void msAraciniziKiralayinSayfasininAcildiginiDogrular() {
@@ -251,7 +251,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Sik Sorulan Sorular butonuna tiklar")
     public void msAcilanDrapdawnMenudeSikSorulanSorularButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.sikSorulanSorularDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.sikSorulanSorularDrapdownButon,2);
     }
     @And("MS Sik Sorulan Sorular sayfasinin acildigini dogrular")
     public void msSikSorulanSorularSayfasininAcildiginiDogrular() {
@@ -259,11 +259,11 @@ public class US01_StepDefs {
     }
     @And("MS Musteri Iliskileri butonunun ustune gelir")
     public void msMusteriIliskileriButonununUstuneGelir() {
-        actions.moveToElement(us01.musteriIliskileriButon).perform();
+        actions.moveToElement(header01Page.musteriIliskileriButon).perform();
     }
     @And("MS Acilan Drapdawn menude Arasa Sor butonuna tiklar")
     public void msAcilanDrapdawnMenudeArasaSorButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.arasaSorDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.arasaSorDrapdownButon,2);
     }
     @And("MS Arasa Sor sayfasinin acildigini dogrular")
     public void msArasaSorSayfasininAcildiginiDogrular() {
@@ -271,7 +271,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Cagri Merkezi butonuna tiklar")
     public void msAcilanDrapdawnMenudeCagriMerkeziButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.cagriMerkeziDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.cagriMerkeziDrapdownButon,2);
     }
     @And("MS Cagri Merkezi sayfasinin acildigini dogrular")
     public void msCagriMerkeziSayfasininAcildiginiDogrular() {
@@ -279,7 +279,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Hasar Tazmin butonuna tiklar")
     public void msAcilanDrapdawnMenudeHasarTazminButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.hasarTazminDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.hasarTazminDrapdownButon,2);
     }
     @And("MS Hasar Tazmin sayfasinin acildigini dogrular")
     public void msHasarTazminSayfasininAcildiginiDogrular() {
@@ -287,7 +287,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Geri Bildirim Formu butonuna tiklar")
     public void msAcilanDrapdawnMenudeGeriBildirimFormuButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.geriBildirimFormuDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.geriBildirimFormuDrapdownButon,2);
     }
     @And("MS Geri Bildirim Formu sayfasinin acildigini dogrular")
     public void msGeriBildirimFormuSayfasininAcildiginiDogrular() {
@@ -295,7 +295,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude SSS butonuna tiklar")
     public void msAcilanDrapdawnMenudeSSSButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.ssSDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.ssSDrapdownButon,2);
     }
     @And("MS SSS sayfasinin acildigini dogrular")
     public void msSSSSayfasininAcildiginiDogrular() {
@@ -303,15 +303,15 @@ public class US01_StepDefs {
     }
     @And("MS Aras Kargo Spor Kulubu butonunun ustune gelir")
     public void msArasKargoSporKulubuButonununUstuneGelir() {
-        actions.moveToElement(us01.arasKargaSporKulbuButon).perform();
+        actions.moveToElement(header01Page.arasKargaSporKulbuButon).perform();
     }
     @And("MS Bize Ulasin butonunun ustune gelir")
     public void msBizeUlasinButonununUstuneGelir() {
-        actions.moveToElement(us01.bizeUlasinButon).perform();
+        actions.moveToElement(header01Page.bizeUlasinButon).perform();
     }
     @And("MS Acilan Drapdawn menude Iletisim butonuna tiklar")
     public void msAcilanDrapdawnMenudeIletisimButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.iletisimDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.iletisimDrapdownButon,2);
     }
     @And("MS Iletisim sayfasinin acildigini dogrular")
     public void msIletisimSayfasininAcildiginiDogrular() {
@@ -319,7 +319,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Genel Mudurluk butonuna tiklar")
     public void msAcilanDrapdawnMenudeGenelMudurlukButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.genelMudurlukDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.genelMudurlukDrapdownButon,2);
     }
     @And("MS Genel Mudurluk sayfasinin acildigini dogrular")
     public void msGenelMudurlukSayfasininAcildiginiDogrular() {
@@ -327,7 +327,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Bolge Mudurluklerimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeBolgeMudurluklerimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.bolgeMudurluklerimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.bolgeMudurluklerimizDrapdownButon,2);
     }
     @And("MS Bolge Mudurluklerimiz sayfasinin acildigini dogrular")
     public void msBolgeMudurluklerimizSayfasininAcildiginiDogrular() {
@@ -335,7 +335,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Subelerimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeSubelerimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.subelerimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.subelerimizDrapdownButon,2);
     }
     @And("MS Subelerimiz sayfasinin acildigini dogrular")
     public void msSubelerimizSayfasininAcildiginiDogrular() {
@@ -343,7 +343,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Aras Burasi Noktalarimiz butonuna tiklar")
     public void msAcilanDrapdawnMenudeArasBurasiNoktalarimizButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.arasBurasiNoktalarimizDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.arasBurasiNoktalarimizDrapdownButon,2);
     }
     @And("MS Aras Burasi Noktalarimiz sayfasinin acildigini dogrular")
     public void msArasBurasiNoktalarimizSayfasininAcildiginiDogrular() {
@@ -351,7 +351,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Musterimiz Olun butonuna tiklar")
     public void msAcilanDrapdawnMenudeMusterimizOlunButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.musterimizOlunDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.musterimizOlunDrapdownButon,2);
     }
     @And("MS Musterimiz Olun sayfasinin acildigini dogrular")
     public void msMusterimizOlunSayfasininAcildiginiDogrular() {
@@ -359,7 +359,7 @@ public class US01_StepDefs {
     }
     @And("MS Surdurebilirlik butonuna tiklar")
     public void msSurdurebilirlikButonunaTiklar() {
-        ReusableMethods.clickByJS(us01.surdurebilirlikButon);
+        ReusableMethods.clickByJS(header01Page.surdurebilirlikButon);
     }
     @And("MS Surdurebilirlik sayfanin acildigini dogrular")
     public void msSurdurebilirlikSayfaninAcildiginiDogrular() {
@@ -367,7 +367,7 @@ public class US01_StepDefs {
     }
     @And("MS Acilan Drapdawn menude Aras Kargo Spor Kulubu butonuna tiklar")
     public void msAcilanDrapdawnMenudeArasKargoSporKulubuButonunaTiklar() {
-        ReusableMethods.clickWithTimeOut(us01.arasKargoSporKulubuDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.arasKargoSporKulubuDrapdownButon,2);
     }
     @And("MS Aras Kargo Spor Kulubu sayfasinin acildigini dogrular")
     public void msArasKargoSporKulubuSayfasininAcildiginiDogrular() {
@@ -375,7 +375,7 @@ public class US01_StepDefs {
     }
     @When("MS Acilan Drapdawn menude Acentemiz Olun butonuna tiklar")
     public void ms_acilan_drapdawn_menude_acentemiz_olun_butonuna_tiklar() {
-        ReusableMethods.clickWithTimeOut(us01.acentemizOlunDrapdownButon,2);
+        ReusableMethods.clickWithTimeOut(header01Page.acentemizOlunDrapdownButon,2);
     }
     @When("MS Acentemiz Olun sayfasinin acildigini dogrular")
     public void ms_acentemiz_olun_sayfasinin_acildigini_dogrular() {

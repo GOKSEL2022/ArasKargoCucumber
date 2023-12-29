@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US05 {
+public class YurticiUcretHesapla05_page {
 
-    public US05(){
+    public YurticiUcretHesapla05_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

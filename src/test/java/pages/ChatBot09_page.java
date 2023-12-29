@@ -7,8 +7,8 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class US09 {
-    public US09() {
+public class ChatBot09_page {
+    public ChatBot09_page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

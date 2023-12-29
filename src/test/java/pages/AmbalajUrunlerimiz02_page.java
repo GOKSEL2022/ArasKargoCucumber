@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US02 {
-    public US02(){
+public class AmbalajUrunlerimiz02_page {
+    public AmbalajUrunlerimiz02_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//*[@class='popup-close']")

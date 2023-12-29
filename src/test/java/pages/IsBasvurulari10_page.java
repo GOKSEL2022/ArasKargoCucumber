@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US10 {
-    public US10(){
+public class IsBasvurulari10_page {
+    public IsBasvurulari10_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "(//a[.='Kariyer'])[1]")

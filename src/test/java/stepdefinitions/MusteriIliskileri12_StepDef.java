@@ -3,22 +3,22 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
-import pages.US02;
-import pages.US12;
+import pages.AmbalajUrunlerimiz02_page;
+import pages.MusteriIliskileri12_page;
 import utilities.Driver;
 import static utilities.ReusableMethods.clickWithTimeOut;
 import static utilities.ReusableMethods.scrollIntoViewJS;
-public class US12_StepDefs {
-    US12 us12=new US12();  US02 us02 =new US02();
+public class MusteriIliskileri12_StepDef {
+    MusteriIliskileri12_page musteriIliskileri12Page =new MusteriIliskileri12_page();  AmbalajUrunlerimiz02_page ambalajUrunlerimiz02Page =new AmbalajUrunlerimiz02_page();
     Actions actions=new Actions(Driver.getDriver());
     @And("GC Kullanici Musteri Iliskileri basligina gelir")
     public void gcKullaniciMusteriIliskileriBasliginaGelir() throws InterruptedException {
-        clickWithTimeOut(us02.popupCloseHome,3);
-        actions.moveToElement(us12.musteriIliskileriLinkHome).perform();
+        clickWithTimeOut(ambalajUrunlerimiz02Page.popupCloseHome,3);
+        actions.moveToElement(musteriIliskileri12Page.musteriIliskileriLinkHome).perform();
     }
     @And("GC Kullanici SSS secenegine tiklar")
     public void gcKullaniciSSSSecenegineTiklar() {
-        clickWithTimeOut(us12.sssSecenegiMusteriIliskileriLinkHome,3);
+        clickWithTimeOut(musteriIliskileri12Page.sssSecenegiMusteriIliskileriLinkHome,3);
     }
     @When("GC Kullanici Sik Sorulan Sorular sayfasinda oldugunu dogrular")
     public void gcKullaniciSikSorulanSorularSayfasindaOldugunuDogrular() {
@@ -26,40 +26,40 @@ public class US12_StepDefs {
     }
     @Given("GC Kullanici sayfadaki ilk soruyu goruntuler")
     public void gcKullaniciSayfadakiIlkSoruyuGoruntuler() {
-        assert us12.ilkSoruSikSorulanSorularMusteriIliskileri.isDisplayed();
+        assert musteriIliskileri12Page.ilkSoruSikSorulanSorularMusteriIliskileri.isDisplayed();
     }
     @When("GC Kullanici sayfadaki son soruyu goruntuler")
     public void gcKullaniciSayfadakiSonSoruyuGoruntuler() {
-        scrollIntoViewJS(us12.sonSoruSikSorulanSorularMusteriIliskileri);
+        scrollIntoViewJS(musteriIliskileri12Page.sonSoruSikSorulanSorularMusteriIliskileri);
     }
     @Given("GC Kullanici sayfadaki ilk soruya tiklar")
     public void gcKullaniciSayfadakiIlkSoruyaTiklar() {
-        clickWithTimeOut(us12.ilkSoruSikSorulanSorularMusteriIliskileri,2);
+        clickWithTimeOut(musteriIliskileri12Page.ilkSoruSikSorulanSorularMusteriIliskileri,2);
     }
     @When("GC Kullanici ilk soru ile ilk cevabin ilgili oldugunu dogrular")
     public void gcKullaniciIlkSoruIleIlkCevabinIlgiliOldugunuDogrular() {
-        us12.ilkCevapSikSorulanSorularMusteriIliskileri.getText().contains(us12.ilkCevapSikSorulanSorularMusteriIliskileri.getText());
+        musteriIliskileri12Page.ilkCevapSikSorulanSorularMusteriIliskileri.getText().contains(musteriIliskileri12Page.ilkCevapSikSorulanSorularMusteriIliskileri.getText());
     }
     @And("GC Kullanici sayfadaki ikinci soruya tiklar")
     public void gcKullaniciSayfadakiIkinciSoruyaTiklar() {
-        clickWithTimeOut(us12.ikinciSoruSikSorulanSorularMusteriIliskileri,2);
+        clickWithTimeOut(musteriIliskileri12Page.ikinciSoruSikSorulanSorularMusteriIliskileri,2);
     }
     @And("GC Kullanici ikinci soru ile ikinci cevabin ilgili oldugunu dogrular")
     public void gcKullaniciIkinciSoruIleIkinciCevabinIlgiliOldugunuDogrular() {
-        us12.ikinciCevapSikSorulanSorularMusteriIliskileri.getText().contains(us12.ikinciSoruSikSorulanSorularMusteriIliskileri.getText());
+        musteriIliskileri12Page.ikinciCevapSikSorulanSorularMusteriIliskileri.getText().contains(musteriIliskileri12Page.ikinciSoruSikSorulanSorularMusteriIliskileri.getText());
     }
     @And("GC Kullanici son soruyu tiklar")
     public void gcKullaniciSonSoruyuTiklar() {
-        scrollIntoViewJS(us12.sonSoruSikSorulanSorularMusteriIliskileri);
-        clickWithTimeOut(us12.sonSoruSikSorulanSorularMusteriIliskileri,2);
+        scrollIntoViewJS(musteriIliskileri12Page.sonSoruSikSorulanSorularMusteriIliskileri);
+        clickWithTimeOut(musteriIliskileri12Page.sonSoruSikSorulanSorularMusteriIliskileri,2);
     }
     @When("GC Kullanici son soru ile son cevabin ilgili oldugunu dogrular")
     public void gcKullaniciSonSoruIleSonCevabinIlgiliOldugunuDogrular() {
-        us12.sonCevapSikSorulanSorularMusteriIliskileri.getText().contains(us12.sonSoruSikSorulanSorularMusteriIliskileri.getText());
+        musteriIliskileri12Page.sonCevapSikSorulanSorularMusteriIliskileri.getText().contains(musteriIliskileri12Page.sonSoruSikSorulanSorularMusteriIliskileri.getText());
     }
     @When("GC Kullanici cevapta belirtilen mobil uygulamalardan GooglePlay e tiklar")
     public void gcKullaniciCevaptaBelirtilenMobilUygulamalardanGooglePlayETiklar() {
-        clickWithTimeOut(us12.googlePlayLinkMusteriIliskileri,2);
+        clickWithTimeOut(musteriIliskileri12Page.googlePlayLinkMusteriIliskileri,2);
     }
     @And("GC Kullanici GooglePlay sayfasina yonlendirildigini dogrular")
     public void gcKullaniciGooglePlaySayfasinaYonlendirildiginiDogrular() {
@@ -67,7 +67,7 @@ public class US12_StepDefs {
     }
     @When("GC Kullanici cevapta belirtilen mobil uygulamalardan AppStore a tiklar")
     public void gcKullaniciCevaptaBelirtilenMobilUygulamalardanAppStoreATiklar() {
-        clickWithTimeOut(us12.appleStoreLinkMusteriIliskileri,2);
+        clickWithTimeOut(musteriIliskileri12Page.appleStoreLinkMusteriIliskileri,2);
     }
     @And("GC Kullanici AppStore  sayfasina yonlendirildigini dogrular")
     public void gcKullaniciAppStoreSayfasinaYonlendirildiginiDogrular() {
@@ -75,7 +75,7 @@ public class US12_StepDefs {
     }
     @When("GC Kullanici cevapta belirtilen mobil uygulamalardan AppGallery e tiklar")
     public void gcKullaniciCevaptaBelirtilenMobilUygulamalardanAppGalleryETiklar() {
-        clickWithTimeOut(us12.appleGalleryLinkMusteriIliskileri,2);
+        clickWithTimeOut(musteriIliskileri12Page.appleGalleryLinkMusteriIliskileri,2);
     }
     @And("GC Kullanici AppGallery sayfasina yonlendirildigini dogrular")
     public void gcKullaniciAppGallerySayfasinaYonlendirildiginiDogrular() {
