@@ -66,8 +66,6 @@
             <version>1.0.2</version>
         </dependency>
 
-
-
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -77,12 +75,7 @@
         </dependency>
 
 
-
-
     </dependencies>
-
-
-
     <build>
         <plugins>
             <plugin>
@@ -90,6 +83,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
+<!--                    alt satır test fail verse de rapor olusturmak için devam etmesini sağlar-->
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <includes>
@@ -103,7 +97,7 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <parallel>classes</parallel>
-                    <forkMode>perthread</forkMode>
+                    <forkCount>1</forkCount>
                     <threadCount>2</threadCount>
                     <reuseForks>false</reuseForks>
                     <argLine>-Duser.language=en</argLine>
@@ -115,6 +109,7 @@
                         <include>**/runners/*Runner*.java</include>
                     </includes>
                     <threadCount>10</threadCount>
+                    <!--                    alt satır test fail verse de rapor olusturmak için devam etmesini sağlar-->
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
@@ -133,12 +128,15 @@
                             <projectName>cucumber-jvm-example</projectName>
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
+                            <!--                    alt satır test fail verse de rapor olusturmak için devam etmesini sağlar-->
+                            <checkBuildResult>false</checkBuildResult>
                             <jsonFiles>
                                 <param>**/json-reports/*.json</param>
-                            </jsonFiles><classificationFiles>->
+                            </jsonFiles>
+                            <classificationFiles>->
                             <param>sample.properties</param>
                             <param>other.properties</param>
-                        </classificationFiles>
+                            </classificationFiles>
                         </configuration>
                     </execution>
                 </executions>
