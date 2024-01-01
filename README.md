@@ -1,6 +1,6 @@
-
-### <center>  ![_f8ad61ce-c762-4199-90300x300](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/13aca0d0-0518-4c83-b820-21f6361b4802)  </center>
-
+<p align="center">
+![_f8ad61ce-c762-4199-90300x300](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/13aca0d0-0518-4c83-b820-21f6361b4802)  
+</p>
 ## <center> Muammer S.  -------- M.Alparslan -------- Mustafa D. -------- Göksel Ç.</center> 
 ## <center> Şeyma Ö. -------- Gonca L. -------- Sümeyye G. -------- Elif K.</center>
 
