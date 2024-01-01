@@ -41,4 +41,14 @@ public class AmbalajUrunlerimiz02_page {
 
     @FindBy(xpath = "//*[@class='career-pages-hero__content']")
     public WebElement geleceginBizdeOnemTasirTextTitle;
+
+    @FindBy(xpath = "//*[@id='viewer']")
+    public WebElement shadow1;
+
+    @FindBy(xpath = "//*[@id='sizer']")
+    public WebElement shadow2;
+
+
+
+
 }

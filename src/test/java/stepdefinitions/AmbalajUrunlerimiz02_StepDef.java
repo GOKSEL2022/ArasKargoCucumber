@@ -57,7 +57,10 @@ public class AmbalajUrunlerimiz02_StepDef {
         assert Driver.getDriver().getCurrentUrl().contains("Aras_Hizmetler_fiyat_listesi_2023");
     }
     @And("GC Kullanici indirme linkini goruntuler")
-    public void gcKullaniciIndirmeLinkiniGoruntuler() {
+    public void gcKullaniciIndirmeLinkiniGoruntuler() throws InterruptedException {
+        System.out.println("ambalajUrunlerimiz02Page.shadow1.getText() = " + ambalajUrunlerimiz02Page.shadow1.getText());
+        Thread.sleep(2000);
+        System.out.println("ambalajUrunlerimiz02Page.shadow2.getText() = " + ambalajUrunlerimiz02Page.shadow2.getText());
         /*
         switchToWindow(1);
 
