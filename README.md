@@ -26,3 +26,7 @@
 ![Screenshot_4](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/8c287b9d-9966-4616-b036-7eb3948e095d)
 ![Screenshot_5](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/f478c7c6-262b-4d4a-b58b-fa9e658d0f24)
 ![Screenshot_6](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/94bb9d3a-1a66-42cc-98d0-41c85920b4a0)
+![Screenshot_7](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/bec4f062-670b-4cad-aeb7-364aa548ada0)
+![Screenshot_8](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/56109dc3-ba95-46a4-a59e-acbe01c1af05)
+![Screenshot_9](https://github.com/ozcamseyma/ArasKargoTeam04/assets/101150339/e055908f-b17a-4d62-be04-7a18765a403b)
+
