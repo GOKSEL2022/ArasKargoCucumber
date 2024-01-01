@@ -1,4 +1,4 @@
-@us09  @runAll  @smoke
+@US09  @runAll
 Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmeli.
 
   Background:
@@ -6,7 +6,7 @@ Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmel
     And AA Anasayfada Size Nasıl Yardimci olabilirim PopUpa tiklar
     When AA Acilan pencereden Devam butonuna tiklar
 
-  @wip
+  @smoke
   Scenario: TC01 Kullanici istenen Islem seçeneklerini secebilmeli
 
     And AA Valid random ad soyad bilgilerini girer ve gonder butonuna tiklar
@@ -20,13 +20,13 @@ Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmel
   Scenario Outline: TC02 Kullanici invalid isim bilgisi ile islem yapamamali
 #INVALID ISIM GIRILIYOR HATA MESAJI VERMIYOR. buggggg
     And AA Kullanici "<invalidIsim>" girer
-    #Then AA Uyarı mesajini dogrular
+    Then AA Uyarı mesajini dogrular
     And AA Sayfalari kapatir
     Examples:
       | invalidIsim |
       | 8551231wq   |
-      | asddwq;     |
-      | %+^12^2     |
+     # | asddwq;     |
+     # | %+^12^2     |
 
 
   Scenario Outline: TC03 Kullanici invalid telefon no ile islem yapamamali
@@ -56,7 +56,7 @@ Feature: US_09 Kullanici Size nasil yardimci olabilirim pop-up ini kullanabilmel
       | asdad@ds.com |
       | as^#@g       |
 
-  @wip
+  @smoke
   Scenario: TC05 Kullanici Çıkış yazarak servisten ayrılabilmeli
     And AA Valid random ad soyad bilgilerini girer ve gonder butonuna tiklar
     And AA Valid random telefon numarası girer ve gonder butonuna tiklar

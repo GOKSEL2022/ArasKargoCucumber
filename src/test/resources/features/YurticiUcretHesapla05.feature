@@ -1,4 +1,4 @@
-@US05
+@US05 @runAll
 Feature: Ucret hesapla pop-up'ina ulasilabilmelidir.
 
 

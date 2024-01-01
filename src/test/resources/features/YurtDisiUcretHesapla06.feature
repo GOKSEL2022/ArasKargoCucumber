@@ -1,4 +1,4 @@
-@us06  @runAll
+@US06  @runAll
 Feature: US06 Kullanici ucret Hesapla pop-upindaki yurt disi ucret hesabini yapabilmeli
 
   Background:
