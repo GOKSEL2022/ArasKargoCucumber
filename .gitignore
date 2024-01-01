@@ -4,6 +4,7 @@
 ### Maven ###
 target/
 ExtentReports/
+runners/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
