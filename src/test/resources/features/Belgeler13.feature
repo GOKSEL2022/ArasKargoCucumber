@@ -1,4 +1,4 @@
-@us13  @runAll
+@US13  @runAll
 Feature: US_13 Kullanici Surdurulebilirlik sekmesindeki -Kalite Yonetim Sistemi- ndeki belgeleri goruntuleyebilmeli
   Scenario: TC01 Kullanici Surdurulebilirlik sekmesindeki -Kalite Yonetim Sistemi- ndeki belgeleri goruntuleyebilmeli
     Given SO Kullanici urle gider

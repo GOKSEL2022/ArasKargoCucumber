@@ -1,4 +1,4 @@
-@US11
+@US11 @runAll
 Feature: US11 Kullanıcı Is Ortagimiz Olun sekmesindeki Sik Sorulan Sorular sayfasındaki
         kategori-kategori soru ve cevaplari gorebilmeli
 

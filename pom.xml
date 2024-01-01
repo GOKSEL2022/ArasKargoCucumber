@@ -83,7 +83,6 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
-<!--                    alt satır test fail verse de rapor olusturmak için devam etmesini sağlar-->
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <includes>
@@ -97,7 +96,7 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <parallel>classes</parallel>
-                    <forkCount>1</forkCount>
+                    <forkCount>2</forkCount>
                     <threadCount>2</threadCount>
                     <reuseForks>false</reuseForks>
                     <argLine>-Duser.language=en</argLine>
@@ -109,7 +108,6 @@
                         <include>**/runners/*Runner*.java</include>
                     </includes>
                     <threadCount>10</threadCount>
-                    <!--                    alt satır test fail verse de rapor olusturmak için devam etmesini sağlar-->
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
