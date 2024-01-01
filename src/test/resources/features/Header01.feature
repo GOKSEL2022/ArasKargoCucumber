@@ -1,4 +1,4 @@
-@US01 @smoke
+@US01  @smoke   @runAll
 Feature:Ana_Sayfadaki_Butonlarin_Tiklanmasi
   @anasayfadaki_butonlarin_testi #
   Scenario:Ana_Sayfadaki_Butonlarin_Tiklanmasi US01_TC01

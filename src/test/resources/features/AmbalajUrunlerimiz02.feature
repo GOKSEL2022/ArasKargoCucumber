@@ -1,4 +1,4 @@
-@US02 @goksel
+@US02  @runAll
 Feature:US002_ambalaj_urunleri_test
   Background:
     Given  GC Kullanici "https://www.araskargo.com.tr"  url ye gelir
@@ -19,7 +19,7 @@ Feature:US002_ambalaj_urunleri_test
     When  GC Kullanici yazdirma linkini goruntuler
     Then  GC Kullanici sayfayi kapatir
 
-    @US02_TC03
+
   Scenario: US002_TC03
     Given GC Kullanici Dosya_Evrak basligina tiklar
     When  GC Kullanici Dosya_Evrak basliginin seceneklerini goruntuler

@@ -17,10 +17,10 @@ import org.junit.runner.RunWith;
         monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
         features = "src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@smoke",
+        tags = "@us09",
         dryRun = false
 )
-public class Runner {
+public class TestRunner {
 
 // RAPORLARIN OLUSMASI ICIN RUNNERDAN CALISTIRMAK GEREKIYOR.
 // FAIL SENARYOLARIN RESIMLERİ RAPORLARA EKLENMEKTEDIR.
